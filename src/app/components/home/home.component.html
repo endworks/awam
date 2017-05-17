@@ -1,0 +1,19 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">It's nothing but trash</h1>
+    <p class="lead">Those who indentify as 'otaku', they sicken me deeply</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card" *ngFor="let event of events; let i = index">
+    <img class="card-img-top" [src]="event.cover | safe" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">{{ event.name }} <span class="badge badge-success">Free</span></h4>
+      <h6 class="card-subtitle mb-2 text-muted">{{ event.tags }}</h6>
+      <p class="card-text">{{ event.description }}</p>
+      <a [routerLink]="['/events', i]" class="btn btn-primary">Details</a>
+      <a [href]="event.website" class="card-link">Website</a>
+    </div>
+  </div>
+</div>
