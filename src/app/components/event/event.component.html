@@ -1,13 +1,82 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <img class="d-block img-fluid" [src]="event.cover" alt="First slide">
+      <img class="d-block img-fluid" [src]="event?.cover" alt="Cover">
     </div>
   </div>
 </div>
 
 <div class="container">
-  <h1 class="display-3">{{ event.name }}</h1>
-  <hr class="my-4">
-  <p class="lead">{{ event.description }}</p>
+  <h1 class="display-3">{{ event?.name }}</h1>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/events', id, 'overview']" routerLinkActive="active">Overview</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/events', id, 'schedule']" routerLinkActive="active">Schedule</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/events', id, 'tickets']" routerLinkActive="active">Tickets</a>
+    </li>
+  </ul>
 </div>
+
+          <hr>
+
+<div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-12 col-md-9">
+
+          <div class="row">
+            <div class="col-12">
+              <h2>Tickets</h2>
+              <div class="row">
+                <div class="col-md-4" *ngFor="let ticket of event?.price.tickets">
+                  <h4>{{ ticket.name }} <span class="badge badge-info">{{ ticket.type }}</span></h4>
+                  <p>{{ ticket.description }} <strong>{{ ticket.amount }} {{ ticket.currency }}</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- Directions -->
+          <div class="row">
+            <div class="col-12">
+              <h2>Directions</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+          </div>
+
+          <!-- Reviews -->
+          <div class="row">
+            <div class="col-12">
+              <h2>Reviews</h2>
+              <div class="card" *ngFor="let review of event?.reviews">
+                <div class="card-block">
+                  <h4 class="card-title">
+                    {{ review.rating }}/10
+                  </h4>
+                  <p class="card-text">{{ review.text}}</p>
+                </div>
+                <div class="card-footer text-muted">
+                  {{ review.user }} at {{ review.date }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- sidebar -->
+        <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let day of event?.dates">
+              <strong>{{ day.date }}</strong> <em>{{ day.start }}-{{ day.end }}</em>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>

@@ -16,6 +16,7 @@ import { environment } from './environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { SafePipe } from './pipes/safe.pipe';
+import { FooterComponent } from './components/elements/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SafePipe } from './pipes/safe.pipe';
     NavbarComponent,
     HomeComponent,
     EventComponent,
-    SafePipe
+    SafePipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

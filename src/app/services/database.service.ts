@@ -7,7 +7,7 @@ export class DatabaseService {
   events: FirebaseListObservable<any[]>;
 
   constructor(db: AngularFireDatabase) {
-    this.events = db.list('event');
+    this.events = db.list('events');
   }
 
   loadEvents() {

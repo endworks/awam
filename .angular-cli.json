@@ -9,7 +9,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -20,11 +21,12 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/tether/dist/js/tether.js",
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/tether/dist/js/tether.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
       "environmentSource": "environments/environment.ts",
@@ -33,6 +35,9 @@
         "prod": "environments/environment.prod.ts"
       }
     }
+  ],
+  "addons": [
+    "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
   ],
   "e2e": {
     "protractor": {
