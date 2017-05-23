@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatabaseService } from '../../services/database.service';
+import { Event } from '../../models/event.model'
 
 @Component({
   selector: 'app-event',
@@ -8,23 +9,24 @@ import { DatabaseService } from '../../services/database.service';
 })
 export class EventComponent implements OnInit {
   id: number;
-  event: any;
+  event: Event;
 
   constructor(public db: DatabaseService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
     })
     this.db.events.subscribe(
       (data) => {
-        this.event = data[this.id];
+        this.event = new Event();
+        this.event.loadFromDatabase(this.id, data[this.id]);
         console.log(data[this.id]);
+        console.log(this.event);
       }
     );
-  }
-
-  ngOnInit() {
   }
 
 }
