@@ -13,12 +13,16 @@ import { DatabaseService } from './services/database.service';
 import { app_routing } from './app.routes';
 import { environment } from './environments/environment';
 
+import { AgmCoreModule } from 'angular2-google-maps/core'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { SafePipe } from './pipes/safe.pipe';
 import { FooterComponent } from './components/elements/footer/footer.component';
 import { ReviewsComponent } from './components/event/reviews/reviews.component';
 import { TicketsComponent } from './components/event/tickets/tickets.component';
+import { EventMapComponent } from './components/event/event-map/event-map.component';
+import { GoogleMapsDirectionsDirective } from './directives/google-maps-directions.directive';
+//import { MapDirectionsComponent } from './components/map-directions/map-directions.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +33,18 @@ import { TicketsComponent } from './components/event/tickets/tickets.component';
     SafePipe,
     FooterComponent,
     ReviewsComponent,
-    TicketsComponent
+    TicketsComponent,
+    EventMapComponent,
+    GoogleMapsDirectionsDirective,
+    //MapDirectionsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     app_routing,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AgmCoreModule.forRoot(environment.gmaps)
   ],
   providers: [DatabaseService, AngularFireDatabase],
   bootstrap: [AppComponent]

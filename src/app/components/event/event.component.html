@@ -32,17 +32,10 @@
           <div *ngIf="event?.tickets[0]; else elseBlock">
             <app-tickets [tickets] = "event?.tickets" [ticketSeller] = "event?.ticketSeller"></app-tickets>
           </div>
-          <ng-template #elseBlock><h5>No ticket information available.</h5></ng-template>
+          <ng-template #elseBlock>
+            <h5>No ticket information available.</h5>
+          </ng-template>
           <hr>
-
-          <!-- Directions -->
-          <div class="row">
-            <div class="col-12">
-              <h2>Directions</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-          </div>
 
           <!-- Reviews -->
           <app-reviews [reviews]="event?.reviews"></app-reviews>
@@ -55,6 +48,9 @@
               <strong>{{ day.start | date:'yMMMMEEEEd'}}</strong> <em>{{ day.start | date:'shortTime'}}-{{ day.end | date:'shortTime'}}</em>
             </li>
           </ul>
+          <!-- Directions -->
+          <h2>Location:</h2>
+          <app-event-map [location] = "event?.location" [zoom] = 12></app-event-map>
         </div>
       </div>
 

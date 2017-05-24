@@ -3,8 +3,7 @@ import { Review } from '../../../models/review.model'
 
 @Component({
   selector: 'app-reviews',
-  templateUrl: './reviews.component.html',
-  styleUrls: ['./reviews.component.css']
+  templateUrl: './reviews.component.html'
 })
 export class ReviewsComponent implements OnInit {
 
@@ -12,7 +11,7 @@ export class ReviewsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
 }

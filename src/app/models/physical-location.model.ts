@@ -1,7 +1,7 @@
 class Coordinates{
   constructor(
-    lat: number,
-    lon: number){}
+    public lat: number,
+    public lon: number){}
 }
 
 export class PhysicalLocation{

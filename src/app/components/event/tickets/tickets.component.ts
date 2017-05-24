@@ -3,8 +3,7 @@ import { Ticket } from '../../../models/ticket.model'
 
 @Component({
   selector: 'app-tickets',
-  templateUrl: './tickets.component.html',
-  styleUrls: ['./tickets.component.css']
+  templateUrl: './tickets.component.html'
 })
 export class TicketsComponent implements OnInit {
 
