@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, AfterViewChecked , Input } from '@angular/core';
 import { Event } from '../../models/event.model'
 import { Subject } from 'rxjs/Subject';
 import { EventColor, CalendarEvent, WeekDay, MonthView, MonthViewDay } from 'calendar-utils';
@@ -23,7 +23,7 @@ const colors: any = {
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements AfterViewChecked  {
 
   @Input() events: Array<Event>;
   calendarEvents: CalendarEvent[] = [];
@@ -31,16 +31,17 @@ export class CalendarComponent implements OnInit {
   refresh: Subject<any> = new Subject();
 
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngAfterViewChecked() {
+    this.calendarEvents = [];
     for(let event of this.events){
       for(let day of event.schedule){
-        let calendarEvent: CalendarEvent;
-        calendarEvent.start = day.start
-        calendarEvent.end = day.end
-        calendarEvent.title = event.name
-        calendarEvent.color = colors.red
+        let calendarEvent: CalendarEvent = {
+          start: day.start,
+          end: day.end,
+          title: event.name,
+          color: colors.red}
         this.calendarEvents.push(calendarEvent)
       }
     }
