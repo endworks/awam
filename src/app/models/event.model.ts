@@ -41,27 +41,29 @@ export class Event{
     this.ticketSeller = db['ticket_seller'];
 
     this.reviews = [];
-    for (let dbReview of db['reviews']){
-       let review = new Review();
-       review.loadFromDatabase(dbReview);
-       this.reviews.push(review);
+    for (let i in db['reviews']){
+      let dbReview = db['reviews'][i];
+      let review = new Review();
+      review.loadFromDatabase(dbReview);
+      review.id = Number(i)
+      this.reviews.push(review);
     }
 
     this.tickets = [];
     if('tickets' in db){
       for (let dbTicket of db['tickets']){
-         let ticket = new Ticket();
-         ticket.loadFromDatabase(dbTicket);
-         this.tickets.push(ticket);
+        let ticket = new Ticket();
+        ticket.loadFromDatabase(dbTicket);
+        this.tickets.push(ticket);
       }
     }
 
     this.schedule = [];
     if('schedule' in db){
       for (let dbSchedule of db['schedule']){
-         let schedule_day = new ScheduleDay();
-         schedule_day.loadFromDatabase(dbSchedule);
-         this.schedule.push(schedule_day);
+        let schedule_day = new ScheduleDay();
+        schedule_day.loadFromDatabase(dbSchedule);
+        this.schedule.push(schedule_day);
       }
     }
     this.calculatePrices()

@@ -17,6 +17,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { SafePipe } from './pipes/safe.pipe';
 import { FooterComponent } from './components/elements/footer/footer.component';
+import { ReviewsComponent } from './components/event/reviews/reviews.component';
+import { TicketsComponent } from './components/event/tickets/tickets.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FooterComponent } from './components/elements/footer/footer.component';
     HomeComponent,
     EventComponent,
     SafePipe,
-    FooterComponent
+    FooterComponent,
+    ReviewsComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,

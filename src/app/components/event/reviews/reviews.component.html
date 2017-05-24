@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-12">
+    <h2>Reviews</h2>
+    <div class="card" *ngFor="let review of reviews">
+      <div class="card-block">
+        <h4 class="card-title">
+          {{ review.title }} | {{ review.rating }}/10
+        </h4>
+        <p class="card-text">{{ review.content}}</p>
+      </div>
+      <div class="card-footer text-muted">
+        {{ review.user.username }} at {{ review.date | date:short }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,22 +25,14 @@
 
 <div class="container">
 
-      <!--Tickets-->
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-12 col-md-9">
 
-          <div class="row">
-            <div class="col-12">
-              <h2>Tickets</h2>
-              <div class="row">
-                <div class="col-md-4" *ngFor="let ticket of event?.tickets">
-                  <h4>{{ ticket.name }} <span class="badge badge-info">{{ ticket.type }}</span></h4>
-                  <p>{{ ticket.price.conditions }} <strong>{{ ticket.price.value }} {{ ticket.price.currency }}</strong></p>
-                </div>
-              </div>
-            </div>
+          <!--Tickets-->
+          <div *ngIf="event?.tickets[0]; else elseBlock">
+            <app-tickets [tickets] = "event?.tickets" [ticketSeller] = "event?.ticketSeller"></app-tickets>
           </div>
-
+          <ng-template #elseBlock><h5>No ticket information available.</h5></ng-template>
           <hr>
 
           <!-- Directions -->
@@ -53,22 +45,7 @@
           </div>
 
           <!-- Reviews -->
-          <div class="row">
-            <div class="col-12">
-              <h2>Reviews</h2>
-              <div class="card" *ngFor="let review of event?.reviews">
-                <div class="card-block">
-                  <h4 class="card-title">
-                    {{ review.title }} | {{ review.rating }}/10
-                  </h4>
-                  <p class="card-text">{{ review.content}}</p>
-                </div>
-                <div class="card-footer text-muted">
-                  {{ review.user.username }} at {{ review.date | date:short }}
-                </div>
-              </div>
-            </div>
-          </div>
+          <app-reviews [reviews]="event?.reviews"></app-reviews>
         </div>
 
         <!-- sidebar -->
