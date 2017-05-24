@@ -6,10 +6,17 @@
 </div>
 
 <div class="container">
+  <!--
+  <p>  Debugging is hard:</p>
+  {{events | json}}
+  <p>
+    Like, really hard.
+  </p>
+  -->
   <div class="card" *ngFor="let event of events; let i = index">
     <img class="card-img-top" [src]="event.cover | safe" alt="Card image cap">
     <div class="card-block">
-      <h4 class="card-title">{{ event.name }} <span class="badge badge-success">Free</span></h4>
+      <h4 class="card-title">{{ event.name }} <span class="badge badge-success">{{event.lowestPrice.value}} to {{event.highestPrice.value}}€</span></h4>
       <h6 class="card-subtitle mb-2 text-muted">{{ event.tags }}</h6>
       <p class="card-text">{{ event.description }}</p>
       <a [routerLink]="['/events', i, 'overview']" class="btn btn-primary">Details</a>

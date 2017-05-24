@@ -9,8 +9,9 @@ export class Review{
   rating: number;
   loadFromDatabase(db:Object){
     this.rating = db['rating'];
-    this.content = db['text'];
-    this.user = new User(db['user']);
+    this.title = db['title'];
+    this.content = db['content'];
+    this.user = new User(db['user_id']);
     this.date = new Date(db['date']);
   }
 }

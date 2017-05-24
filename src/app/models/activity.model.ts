@@ -12,13 +12,18 @@ export class Activity{
   type: string; //Tournament, Guest, Talk, etc
   loadFromDatabase(db : Object){
     this.description = db['description'];
-    this.end = db['end'];
     this.inscription_necessary = db['inscription_necessary'];
-    this.start = db['start'];
+    this.start = new Date(db['start']);
+    this.end = new Date(db['end']);
     this.tags = db['tags'];
     this.title = db['title'];
     this.type = db['type'];
+
+    this.rules = db['rules'];
+    this.prizes = db['prize'];
   }
+  rules: string;
+  prizes: string[];
 }
 
 export class Tournament extends Activity {

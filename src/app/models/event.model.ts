@@ -3,10 +3,12 @@ import { Ticket } from './ticket.model';
 import { PhysicalLocation } from './physical-location.model';
 import { Activity } from './activity.model';
 import { DatabaseService } from '../services/database.service';
-import { Schedule } from './schedule.model';
+import { ScheduleDay } from './schedule.model';
+import { Price } from './price.model'
 
 export class Event{
   id: number;
+  cover: string;
   name: string;
   slug: string;
   pricing: string; //Paid, Free, Other
@@ -14,13 +16,18 @@ export class Event{
   reviews: Review[];
   tickets: Ticket[];
   ticketSeller: string;
-  schedule: Schedule[];
+  schedule: ScheduleDay[];
   location: PhysicalLocation;
   website: string;
   //WIP:
   //photos: Photo[];
-  loadFromDatabase(id:number, db: Object){
+
+  lowestPrice : Price;
+  highestPrice : Price;
+  loadFromDatabase(id:number, db: any){
+
     this.id = id;
+    this.cover = db['cover'];
     this.name = db['name'];
     if(db.hasOwnProperty('slug')){
       this.slug = db['slug'];
@@ -35,24 +42,44 @@ export class Event{
 
     this.reviews = [];
     for (let dbReview of db['reviews']){
-       var review = new Review();
+       let review = new Review();
        review.loadFromDatabase(dbReview);
-       this.reviews.concat(review);
+       this.reviews.push(review);
     }
 
     this.tickets = [];
-    for (let dbTicket of db['tickets']){
-       var ticket = new Ticket();
-       ticket.loadFromDatabase(dbTicket);
-       this.tickets.concat(ticket);
+    if('tickets' in db){
+      for (let dbTicket of db['tickets']){
+         let ticket = new Ticket();
+         ticket.loadFromDatabase(dbTicket);
+         this.tickets.push(ticket);
+      }
     }
 
     this.schedule = [];
-    for (let dbSchedule of db['schedule']){
-       var schedule_day = new Schedule();
-       schedule_day.loadFromDatabase(dbSchedule);
-       this.schedule.concat(schedule_day);
+    if('schedule' in db){
+      for (let dbSchedule of db['schedule']){
+         let schedule_day = new ScheduleDay();
+         schedule_day.loadFromDatabase(dbSchedule);
+         this.schedule.push(schedule_day);
+      }
     }
-
+    this.calculatePrices()
+  }
+  calculatePrices(){
+    var lowestPrice = new Price(Infinity, 'EUR')
+    var highestPrice = new Price(0, 'EUR')
+    for(let ticket of this.tickets){
+      if(ticket.price.currency == 'EUR'){
+        if(ticket.price.value > highestPrice.value){
+          var highestPrice = ticket.price
+        }
+        else if(ticket.price.value < lowestPrice.value){
+          var lowestPrice = ticket.price
+        }
+      }
+    }
+    this.lowestPrice = lowestPrice
+    this.highestPrice = highestPrice
   }
 }

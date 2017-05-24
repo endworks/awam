@@ -35,7 +35,7 @@
               <div class="row">
                 <div class="col-md-4" *ngFor="let ticket of event?.tickets">
                   <h4>{{ ticket.name }} <span class="badge badge-info">{{ ticket.type }}</span></h4>
-                  <p>{{ ticket.conditions }} <strong>{{ ticket.price.value }} {{ ticket.currency }}</strong></p>
+                  <p>{{ ticket.price.conditions }} <strong>{{ ticket.price.value }} {{ ticket.price.currency }}</strong></p>
                 </div>
               </div>
             </div>
@@ -59,12 +59,12 @@
               <div class="card" *ngFor="let review of event?.reviews">
                 <div class="card-block">
                   <h4 class="card-title">
-                    {{ review.rating }}/10
+                    {{ review.title }} | {{ review.rating }}/10
                   </h4>
-                  <p class="card-text">{{ review.text}}</p>
+                  <p class="card-text">{{ review.content}}</p>
                 </div>
                 <div class="card-footer text-muted">
-                  {{ review.user }} at {{ review.date }}
+                  {{ review.user.username }} at {{ review.date | date:short }}
                 </div>
               </div>
             </div>
@@ -75,7 +75,7 @@
         <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let day of event?.schedule">
-              <strong>{{ day.start }}</strong> <em>{{ day.start }}-{{ day.end }}</em>
+              <strong>{{ day.start | date:'yMMMMEEEEd'}}</strong> <em>{{ day.start | date:'shortTime'}}-{{ day.end | date:'shortTime'}}</em>
             </li>
           </ul>
         </div>

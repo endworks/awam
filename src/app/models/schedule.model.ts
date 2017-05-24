@@ -1,6 +1,6 @@
 import { Activity } from './activity.model'
 
-export class Schedule{
+export class ScheduleDay{
   start: Date;
   end:Date;
   //both should be set to the same day in local time
@@ -9,16 +9,17 @@ export class Schedule{
     this.start = new Date(db['start']);
     this.end = new Date(db['end']);
     this.activities = [];
-    for(let zone of db['activities']){
+    for(let zone in db['activities']){
       for(let dbActivity of db['activities'][zone]){
-        /** var type = dbActivity['type']
+        /** 7/future version
+        var type = dbActivity['type']
         if(type == 'tournament') var activity = new Tournament();
         else if(type == 'guest') var activity = new Guest();
-        else var activity = new Activity(); **/
-        var activity = new Activity();
+        else var activity = new Activity(); */
+        let activity = new Activity();
         activity.loadFromDatabase(dbActivity);
         activity.zone = zone;
-        this.activities.concat(activity);
+        this.activities.push(activity);
       }
     }
   }
