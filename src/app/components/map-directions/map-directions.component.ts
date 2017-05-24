@@ -1,15 +1,16 @@
+
 //Lots of thanks to Github user marimuthum17 for providing the basis for this implementation!
 //Original thread: https://github.com/SebastianM/angular-google-maps/issues/495#issuecomment-277603624
 //Article in his website: http://www.17educations.com/angularjs-2/google-map-directions-display-angular-2/
 import { Component, NgModule, NgZone, OnInit, ViewChild, ElementRef, Directive, Input  } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { PhysicalLocation } from '../../../models/physical-location.model'
+import { PhysicalLocation } from '../../models/physical-location.model'
 import { BrowserModule } from '@angular/platform-browser'
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
-import { GoogleMapsDirectionsDirective } from '../../../directives/google-maps-directions.directive';
+import { GoogleMapsDirectionsDirective } from '../../directives/google-maps-directions.directive';
 
-declare var google:any;
-declare var jQuery:any;
+declare var google: any;
+declare var jQuery: any;
 
 @Component({
   selector: 'app-event-map',
@@ -78,7 +79,7 @@ export class EventMapDirections implements OnInit {
       autocomplete.addListener("place_changed", () => {
             this.ngZone.run(() => {
               //get the place result
-              let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+              let place = autocomplete.getPlace(); //google.maps.places.PlaceResult
               //verify result
               if (place.geometry === undefined) {
                 return;

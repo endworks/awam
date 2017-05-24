@@ -6,8 +6,7 @@ import { Directive,  Input, Output } from '@angular/core';
 
 
 declare var google: any;
-
-
+declare var jQuery: any;
 
 @Directive({
   selector: 'sebm-google-map-directions'
