@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-.card-img-top, .carousel-item img{
+.card-img-top, .carousel-item img, .cover{
   max-height: 300px;
   width: 100%;
   object-fit: cover;
+}
+
+.card .cover {
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+  padding: 0px !important;
+  height: 100%;
+  min-height: 13em;
+  margin: -1px;
 }

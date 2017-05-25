@@ -21,37 +21,49 @@
   </ul>
 </div>
 
-          <hr>
+<hr>
 
-<div class="container">
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-12 mx-auto">
+      <div class="row">
+        <div class="col-lg-12">
 
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-12 col-md-9">
-
-          <!--Tickets-->
-          <div *ngIf="event?.tickets[0]; else elseBlock">
-            <app-tickets [tickets] = "event?.tickets" [ticketSeller] = "event?.ticketSeller"></app-tickets>
+          <div class="card card-default">
+            <div class="col-12">
+              <div class="row bg-primary text-center text-white">
+                <div class="col-4 bg-success py-5">
+                  <h1 class="m-b-2"><i class="fa fa-calendar-o display-2"></i></h1>
+                  <h6 class="text-light">{{ event?.schedule.length }} days</h6>
+                </div>
+                <div class="col-4 bg-danger py-5">
+                  <h1 class="m-b-2"><i class="fa fa-check-square-o display-2"></i></h1>
+                  <h6 class="text-light">{{ event?.schedule[0]?.activity?.length ? event?.schedule[0]?.activity?.length : '0' }} activities</h6>
+                </div>
+                <div class="col-4 bg-primary py-5">
+                  <h1 class="m-b-2"><i class="fa fa-ticket display-2"></i></h1>
+                  <h6 class="text-light">{{ event?.tickets.length }} tickets</h6>
+                </div>
+              </div>
+              <div class="card-block">
+                <h3 class="card-title">Card</h3>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-outline-secondary">Outline</a>
+              </div>
+            </div>
           </div>
-          <ng-template #elseBlock>
-            <h5>No ticket information available.</h5>
-          </ng-template>
-          <hr>
 
-          <!-- Reviews -->
-          <app-reviews [reviews]="event?.reviews"></app-reviews>
-        </div>
+          <app-tickets [tickets] = "event?.tickets" [ticketSeller] = "event?.ticketSeller"></app-tickets>
 
-        <!-- sidebar -->
-        <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
-          <ul class="list-group">
-            <li class="list-group-item" *ngFor="let day of event?.schedule">
-              <strong>{{ day.start | date:'yMMMMEEEEd'}}</strong> <em>{{ day.start | date:'shortTime'}}-{{ day.end | date:'shortTime'}}</em>
-            </li>
-          </ul>
-          <!-- Directions -->
-          <h2>Location:</h2>
+          <app-dates [schedule] = "event?.schedule"></app-dates>
+
           <app-event-map [location] = "event?.location" [zoom] = 12></app-event-map>
+
+          <app-reviews [reviews]="event?.reviews"></app-reviews>
+
         </div>
       </div>
-
     </div>
+  </div>
+
+</div>

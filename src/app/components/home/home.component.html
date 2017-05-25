@@ -4,22 +4,37 @@
     <p class="lead text-white">Those who indentify as 'otaku', they sicken me deeply</p>
   </div>
 </div>
+<!--
+<p>  Debugging is hard:</p>
+{{events | json}}
+<p>
+Like, really hard.
+</p>
+-->
 
-<div class="container">
-  <!--
-  <p>  Debugging is hard:</p>
-  {{events | json}}
-  <p>
-    Like, really hard.
-  </p>
-  -->
-  <div class="card" *ngFor="let event of events; let i = index">
-    <img class="card-img-top" [src]="event.cover | safe" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">{{ event.name }} <span class="badge badge-success">{{event.lowestPrice.value}} to {{event.highestPrice.value}}€</span></h4>
-      <h6 class="card-subtitle mb-2 text-muted">{{ event.tags }}</h6>
-      <p class="card-text">{{ event.description }}</p>
-      <a [routerLink]="['/events', i, 'overview']" class="btn btn-primary">Details</a>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-12 mx-auto">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card card-default mt-4" *ngFor="let event of events; let i = index">
+            <div class="container-fluid">
+              <div class="row">
+                <img class="col-md-3 d-flex cover" [src]="event.cover | safe" alt="Card image cap">
+                <div class="col-md-9 py-3">
+                  <h3 class="card-title">{{ event.name }} <span class="badge badge-success">{{event.lowestPrice.value}} to {{event.highestPrice.value}}€</span></h3>
+                  <p class="card-text">{{ event.description }}</p>
+                  <div id="tags">
+                    <span class="badge badge-info" *ngFor="let tag of event.tags">{{ tag }}</span>
+                  </div>
+                  <a [routerLink]="['/events', i, 'overview']" class="btn btn-primary">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
-</div>
