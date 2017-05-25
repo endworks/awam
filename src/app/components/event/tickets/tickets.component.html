@@ -6,7 +6,7 @@
     <div class="col-sm-6" *ngFor="let ticket of tickets">
       <div class="card card-inverse card-warning text-center pt-2 mb-4">
         <div class="card-block card-title">
-          <h1 class="m-b-2"><i class="fa fa-ticket display-2"></i> {{ ticket.price.value | currency:ticket.price.currency:true }}</h1>
+          <h1 class="m-b-2"><i class="fa {{ ticket.type == 'pass'? 'fa-id-badge' : 'fa-ticket'}} display-2"></i> {{ ticket.price.value | currency:ticket.price.currency:true }}</h1>
           <h6 class="text-light">{{ ticket.name }} | {{ ticket.price.conditions }}</h6>
         </div>
       </div>
