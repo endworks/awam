@@ -57,7 +57,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(228),
+        template: __webpack_require__(227),
         styles: [__webpack_require__(220)]
     })
 ], AppComponent);
@@ -174,7 +174,9 @@ var app_routes = [
     { path: 'events', component: __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'events/:id/overview', component: __WEBPACK_IMPORTED_MODULE_2__components_event_event_component__["a" /* EventComponent */] },
     { path: 'events/:id/schedule', component: __WEBPACK_IMPORTED_MODULE_2__components_event_event_component__["a" /* EventComponent */] },
-    { path: 'events/:id/tickets', component: __WEBPACK_IMPORTED_MODULE_2__components_event_event_component__["a" /* EventComponent */] },
+    { path: 'events/:id/location', component: __WEBPACK_IMPORTED_MODULE_2__components_event_event_component__["a" /* EventComponent */] },
+    { path: 'events/:id/reviews', component: __WEBPACK_IMPORTED_MODULE_2__components_event_event_component__["a" /* EventComponent */] },
+    { path: 'events/:id/gallery', component: __WEBPACK_IMPORTED_MODULE_2__components_event_event_component__["a" /* EventComponent */] },
     { path: 'admin', component: __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__["a" /* HomeComponent */] },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
@@ -209,7 +211,7 @@ var FooterComponent = (function () {
 FooterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-footer',
-        template: __webpack_require__(229)
+        template: __webpack_require__(228)
     }),
     __metadata("design:paramtypes", [])
 ], FooterComponent);
@@ -244,7 +246,7 @@ var NavbarComponent = (function () {
 NavbarComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-navbar',
-        template: __webpack_require__(230)
+        template: __webpack_require__(229)
     }),
     __metadata("design:paramtypes", [])
 ], NavbarComponent);
@@ -283,7 +285,7 @@ __decorate([
 DatesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-dates',
-        template: __webpack_require__(231)
+        template: __webpack_require__(230)
     }),
     __metadata("design:paramtypes", [])
 ], DatesComponent);
@@ -312,7 +314,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var EventMapComponent = (function () {
     function EventMapComponent() {
-        this.zoom = 12;
+        this.zoom = 14;
     }
     EventMapComponent.prototype.ngOnInit = function () {
     };
@@ -322,15 +324,11 @@ __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__models_physical_location_model__["a" /* PhysicalLocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__models_physical_location_model__["a" /* PhysicalLocation */]) === "function" && _a || Object)
 ], EventMapComponent.prototype, "location", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], EventMapComponent.prototype, "zoom", void 0);
 EventMapComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-event-map',
-        template: __webpack_require__(232),
-        styles: ["\n    .sebm-google-map-container {\n    height: 200px;\n    }"]
+        template: __webpack_require__(231),
+        styles: ["\n    .sebm-google-map-container {\n    height: 400px;\n    }"]
     }),
     __metadata("design:paramtypes", [])
 ], EventMapComponent);
@@ -370,7 +368,7 @@ __decorate([
 ReviewsComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-reviews',
-        template: __webpack_require__(234)
+        template: __webpack_require__(233)
     }),
     __metadata("design:paramtypes", [])
 ], ReviewsComponent);
@@ -413,7 +411,7 @@ __decorate([
 TicketsComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-tickets',
-        template: __webpack_require__(235)
+        template: __webpack_require__(234)
     }),
     __metadata("design:paramtypes", [])
 ], TicketsComponent);
@@ -791,70 +789,70 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
+/***/ 227:
+/***/ (function(module, exports) {
+
+module.exports = "<app-navbar></app-navbar>\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<app-footer></app-footer>\r\n"
+
+/***/ }),
+
 /***/ 228:
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n\n<router-outlet></router-outlet>\n\n<app-footer></app-footer>\n"
+module.exports = "<div class=\"container\">\r\n  <hr>\r\n\r\n  <footer>\r\n    <p>&copy; drk.cat Developers</p>\r\n  </footer>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 229:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <hr>\n\n  <footer>\n    <p>&copy; drk.cat Developers</p>\n  </footer>\n</div>\n"
+module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse bg-primary\">\r\n  <div class=\"container\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <a class=\"navbar-brand\" [routerLink]=\"['home']\">Anime Was A Mistake</a>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\" routerLinkActive=\"active\">\r\n        <a class=\"nav-link\" [routerLink]=\"['home']\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\" routerLinkActive=\"active\">\r\n        <a class=\"nav-link\" [routerLink]=\"['events']\">Events</a>\r\n      </li>\r\n      <li class=\"nav-item\" routerLinkActive=\"active\">\r\n        <a class=\"nav-link disabled\" [routerLink]=\"['admin']\">Admin</a>\r\n      </li>\r\n    </ul>\r\n    <form class=\"form-inline my-2 my-lg-0\">\r\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\r\n      <button class=\"btn btn-success my-2 my-sm-0\" type=\"submit\">Search</button>\r\n    </form>\r\n  </div>\r\n</div>\r\n</nav>\r\n"
 
 /***/ }),
 
 /***/ 230:
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse bg-primary\">\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <a class=\"navbar-brand\" [routerLink]=\"['home']\">Anime Was A Mistake</a>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" [routerLink]=\"['home']\">Home</a>\n      </li>\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" [routerLink]=\"['events']\">Events</a>\n      </li>\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link disabled\" [routerLink]=\"['admin']\">Admin</a>\n      </li>\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-success my-2 my-sm-0\" type=\"submit\">Search</button>\n    </form>\n  </div>\n</nav>\n"
+module.exports = "<div class=\"row mt-4\">\r\n  <div class=\"col-sm-12\">\r\n    <h2>Schedule</h2>\r\n  </div>\r\n  <ng-container *ngIf=\"schedule.length > 0\">\r\n    <div class=\"col\" *ngFor=\"let day of schedule\">\r\n      <div class=\"card card-inverse card-info text-center pt-2 mb-4\">\r\n        <div class=\"card-block card-title\">\r\n          <h1 class=\"m-b-2\"><i class=\"fa fa-calendar display-2\"></i> {{ day.start | date:'shortDate'}}</h1>\r\n          <h6 class=\"text-light\">{{ day.start | date:'shortTime'}}-{{ day.end | date:'shortTime'}}</h6>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"schedule.length == 0\">\r\n    <div class=\"col-sm-12\">\r\n      <h5>No schedule information available...</h5>\r\n    </div>\r\n  </ng-container>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 231:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row mt-4\">\n  <div class=\"col-sm-12\">\n    <h2>Schedule</h2>\n  </div>\n  <ng-container *ngIf=\"schedule.length > 0\">\n    <div class=\"col-sm-6\" *ngFor=\"let day of schedule\">\n      <div class=\"card card-inverse card-info text-center pt-2 mb-4\">\n        <div class=\"card-block card-title\">\n          <h1 class=\"m-b-2\"><i class=\"fa fa-calendar display-2\"></i> {{ day.start | date:'shortDate'}}</h1>\n          <h6 class=\"text-light\">{{ day.start | date:'shortTime'}}-{{ day.end | date:'shortTime'}}</h6>\n        </div>\n      </div>\n    </div>\n  </ng-container>\n  <ng-container *ngIf=\"schedule.length == 0\">\n    <div class=\"col-sm-12\">\n      <h5>No schedule information available...</h5>\n    </div>\n  </ng-container>\n</div>\n"
+module.exports = "<div class=\"row mt-4\">\r\n  <div class=\"col-12\">\r\n    <h2>Location</h2>\r\n    <sebm-google-map [latitude]=\"location.coordinates.lat\" [longitude]=\"location.coordinates.lon\" [zoom] = \"zoom\">\r\n      <sebm-google-map-marker [latitude]=\"location.coordinates.lat\" [longitude]=\"location.coordinates.lon\"></sebm-google-map-marker>\r\n    </sebm-google-map>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 232:
 /***/ (function(module, exports) {
 
-module.exports = "<sebm-google-map [latitude]=\"location.coordinates.lat\" [longitude]=\"location.coordinates.lon\" [zoom] = \"zoom\">\n  <sebm-google-map-marker [latitude]=\"location.coordinates.lat\" [longitude]=\"location.coordinates.lon\"></sebm-google-map-marker>\n</sebm-google-map>\n"
+module.exports = "<div id=\"carouselExampleSlidesOnly\" class=\"carousel slide\" data-ride=\"carousel\">\r\n  <div class=\"carousel-inner\" role=\"listbox\">\r\n    <div class=\"carousel-item active\">\r\n      <img class=\"d-block img-fluid\" [src]=\"event?.cover\" alt=\"Cover\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"container\">\r\n  <h1 class=\"display-3\">{{ event?.name }}</h1>\r\n  <h3 class=\"lead\">{{ event?.location.venue }}, {{ event?.location.locality }}</h3>\r\n  <ul class=\"nav nav-pills\">\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" [routerLink]=\"['/events', id, 'overview']\" routerLinkActive=\"active\">Overview</a>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" [routerLink]=\"['/events', id, 'schedule']\" routerLinkActive=\"active\">Schedule</a>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" [routerLink]=\"['/events', id, 'location']\" routerLinkActive=\"active\">Location</a>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" [routerLink]=\"['/events', id, 'gallery']\" routerLinkActive=\"active\">Gallery</a>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" [routerLink]=\"['/events', id, 'reviews']\" routerLinkActive=\"active\">Reviews</a>\r\n    </li>\r\n  </ul>\r\n</div>\r\n\r\n<hr>\r\n\r\n<div class=\"container pt-3\">\r\n  <div class=\"row\">\r\n    <div class=\"col-9 mx-auto\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n\r\n          <div class=\"card card-default\">\r\n            <div class=\"col-12\">\r\n              <div class=\"card-block\">\r\n                <!-- <h3 class=\"card-title\">Card</h3> -->\r\n                <p class=\"card-text\">{{ event.description }}</p>\r\n              </div>\r\n              <div class=\"row text-center\">\r\n                <div class=\"col py-3\">\r\n                  <h1 class=\"m-b-2\"><i class=\"fa fa-calendar-o display-2\"></i></h1>\r\n                  <h6 class=\"text-light\">{{ event?.schedule.length }} days</h6>\r\n                </div>\r\n                <div class=\"col py-3\">\r\n                  <h1 class=\"m-b-2\"><i class=\"fa fa-check-square-o display-2\"></i></h1>\r\n                  <h6 class=\"text-light\">{{ event?.schedule[0]?.activities?.length ? event?.schedule[0]?.activities?.length : '0' }} activities</h6>\r\n                </div>\r\n                <div class=\"col py-3\">\r\n                  <h1 class=\"m-b-2\"><i class=\"fa fa-ticket display-2\"></i></h1>\r\n                  <h6 class=\"text-light\">{{ event?.tickets.length }} tickets</h6>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <app-tickets [tickets] = \"event?.tickets\" [ticketSeller] = \"event?.ticketSeller\"></app-tickets>\r\n\r\n          <app-dates [schedule] = \"event?.schedule\"></app-dates>\r\n\r\n          <app-event-map [location] = \"event?.location\"></app-event-map>\r\n\r\n          <app-reviews [reviews]=\"event?.reviews\"></app-reviews>\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-3 mx-auto\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n          <div class=\"card card-default\">\r\n            <div class=\"card-block\">\r\n              <h3 class=\"card-title\">Card</h3>\r\n              <p class=\"card-text\">With supporting text below as a natural lead-in to additional content.</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 233:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"carouselExampleSlidesOnly\" class=\"carousel slide\" data-ride=\"carousel\">\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <div class=\"carousel-item active\">\n      <img class=\"d-block img-fluid\" [src]=\"event?.cover\" alt=\"Cover\">\n    </div>\n  </div>\n</div>\n\n<div class=\"container\">\n  <h1 class=\"display-3\">{{ event?.name }}</h1>\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" [routerLink]=\"['/events', id, 'overview']\" routerLinkActive=\"active\">Overview</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" [routerLink]=\"['/events', id, 'schedule']\" routerLinkActive=\"active\">Schedule</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" [routerLink]=\"['/events', id, 'tickets']\" routerLinkActive=\"active\">Tickets</a>\n    </li>\n  </ul>\n</div>\n\n<hr>\n\n<div class=\"container pt-3\">\n  <div class=\"row\">\n    <div class=\"col-12 mx-auto\">\n      <div class=\"row\">\n        <div class=\"col-lg-12\">\n\n          <div class=\"card card-default\">\n            <div class=\"col-12\">\n              <div class=\"row bg-primary text-center text-white\">\n                <div class=\"col-4 bg-success py-5\">\n                  <h1 class=\"m-b-2\"><i class=\"fa fa-calendar-o display-2\"></i></h1>\n                  <h6 class=\"text-light\">{{ event?.schedule.length }} days</h6>\n                </div>\n                <div class=\"col-4 bg-danger py-5\">\n                  <h1 class=\"m-b-2\"><i class=\"fa fa-check-square-o display-2\"></i></h1>\n                  <h6 class=\"text-light\">{{ event?.schedule[0]?.activities?.length ? event?.schedule[0]?.activities?.length : '0' }} activities</h6>\n                </div>\n                <div class=\"col-4 bg-primary py-5\">\n                  <h1 class=\"m-b-2\"><i class=\"fa fa-ticket display-2\"></i></h1>\n                  <h6 class=\"text-light\">{{ event?.tickets.length }} tickets</h6>\n                </div>\n              </div>\n              <div class=\"card-block\">\n                <h3 class=\"card-title\">Card</h3>\n                <p class=\"card-text\">With supporting text below as a natural lead-in to additional content.</p>\n                <a href=\"#\" class=\"btn btn-outline-secondary\">Outline</a>\n              </div>\n            </div>\n          </div>\n\n          <app-tickets [tickets] = \"event?.tickets\" [ticketSeller] = \"event?.ticketSeller\"></app-tickets>\n\n          <app-dates [schedule] = \"event?.schedule\"></app-dates>\n\n          <app-event-map [location] = \"event?.location\" [zoom] = 12></app-event-map>\n\n          <app-reviews [reviews]=\"event?.reviews\"></app-reviews>\n\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"row mt-4\">\r\n  <div class=\"col-12\">\r\n    <h2>Reviews</h2>\r\n    <div *ngIf=\"reviews[0]; else elseBlock\">\r\n\r\n      <div class=\"card card-default\" *ngFor=\"let review of reviews\">\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-3 d-flex bg-success p-5\">\r\n              <h1 class=\"mx-auto align-self-center\">{{ review.rating }}/10</h1>\r\n            </div>\r\n            <div class=\"col-md-9 py-3\">\r\n              <h3 class=\"card-title\">{{ review.title }}</h3>\r\n              <p class=\"card-text\">{{ review.content}}</p>\r\n              <p class=\"text-muted\">\r\n                {{ review.user.username }} at {{ review.date | date:short }}\r\n              </p>\r\n              <!-- <a href=\"#\" class=\"btn btn-outline-success btn-block\">Outline</a> -->\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n    <ng-template #elseBlock>\r\n      <h4>There are no reviews! Create one:</h4>\r\n    </ng-template>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 234:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row mt-4\">\n  <div class=\"col-12\">\n    <h2>Reviews</h2>\n    <div *ngIf=\"reviews[0]; else elseBlock\">\n\n      <div class=\"card card-default\" *ngFor=\"let review of reviews\">\n        <div class=\"container\">\n          <div class=\"row\">\n            <div class=\"col-md-3 d-flex bg-success p-5\">\n              <h1 class=\"mx-auto align-self-center\">{{ review.rating }}/10</h1>\n            </div>\n            <div class=\"col-md-9 py-3\">\n              <h3 class=\"card-title\">{{ review.title }}</h3>\n              <p class=\"card-text\">{{ review.content}}</p>\n              <p class=\"text-muted\">\n                {{ review.user.username }} at {{ review.date | date:short }}\n              </p>\n              <a href=\"#\" class=\"btn btn-outline-success btn-block\">Outline</a>\n            </div>\n          </div>\n\n        </div>\n      </div>\n\n    </div>\n    <ng-template #elseBlock>\n      <h4>There are no reviews! Create one:</h4>\n    </ng-template>\n  </div>\n</div>\n"
+module.exports = "<div class=\"row mt-4\">\r\n  <div class=\"col-sm-12\">\r\n    <h2>Tickets</h2>\r\n  </div>\r\n  <ng-container *ngIf=\"tickets.length > 0\">\r\n    <div class=\"col-sm-6\" *ngFor=\"let ticket of tickets\">\r\n      <div class=\"card card-inverse card-warning text-center pt-2 mb-4\">\r\n        <div class=\"card-block card-title\">\r\n          <h1 class=\"m-b-2\"><i class=\"fa {{ ticket.type == 'pass'? 'fa-id-badge' : 'fa-ticket'}} display-2\"></i> {{ ticket.price.value | currency:ticket.price.currency:true }}</h1>\r\n          <h6 class=\"text-light\">{{ ticket.name }} | {{ ticket.price.conditions }}</h6>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"tickets.length == 0\">\r\n    <div class=\"col-sm-12\">\r\n      <h5>No tickets information available...</h5>\r\n    </div>\r\n  </ng-container>\r\n\r\n  <div class=\"col-sm-12\" *ngIf=\"ticketSeller\">\r\n    <h5>Ticket seller:\r\n      <a href={{ticketSeller}}>{{ticketSeller}}</a>\r\n    </h5>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 235:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row mt-4\">\n  <div class=\"col-sm-12\">\n    <h2>Tickets</h2>\n  </div>\n  <ng-container *ngIf=\"tickets.length > 0\">\n    <div class=\"col-sm-6\" *ngFor=\"let ticket of tickets\">\n      <div class=\"card card-inverse card-warning text-center pt-2 mb-4\">\n        <div class=\"card-block card-title\">\n          <h1 class=\"m-b-2\"><i class=\"fa {{ ticket.type == 'pass'? 'fa-id-badge' : 'fa-ticket'}} display-2\"></i> {{ ticket.price.value | currency:ticket.price.currency:true }}</h1>\n          <h6 class=\"text-light\">{{ ticket.name }} | {{ ticket.price.conditions }}</h6>\n        </div>\n      </div>\n    </div>\n  </ng-container>\n  <ng-container *ngIf=\"tickets.length == 0\">\n    <div class=\"col-sm-12\">\n      <h5>No tickets information available...</h5>\n    </div>\n  </ng-container>\n\n  <div class=\"col-sm-12\" *ngIf=\"ticketSeller\">\n    <h5>Ticket seller:\n      <a href={{ticketSeller}}>{{ticketSeller}}</a>\n    </h5>\n  </div>\n</div>\n"
+module.exports = "<div class=\"jumbotron jumbotron-fluid bg-primary\">\r\n  <div class=\"container\">\r\n    <h1 class=\"display-3 text-white\">It's nothing but trash</h1>\r\n    <p class=\"lead text-white\">Those who indentify as 'otaku', they sicken me deeply</p>\r\n  </div>\r\n</div>\r\n<!--\r\n<p>  Debugging is hard:</p>\r\n{{events | json}}\r\n<p>\r\nLike, really hard.\r\n</p>\r\n-->\r\n\r\n<div class=\"container pt-3\">\r\n  <div class=\"row\">\r\n    <div class=\"col-12 mx-auto\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n\r\n          <div class=\"card card-default mt-4\" *ngFor=\"let event of events; let i = index\">\r\n            <div class=\"container-fluid\">\r\n              <div class=\"row\">\r\n                <img class=\"col-md-3 d-flex cover\" [src]=\"event.cover | safe\" alt=\"Card image cap\">\r\n                <div class=\"col-md-9 py-3\">\r\n                  <h3 class=\"card-title pointer\" role=\"button\" [routerLink]=\"['/events', i, 'overview']\">\r\n                    {{ event.name }}\r\n                    <span class=\"badge badge-success\">\r\n                      {{ event.lowestPrice.value != 0 ? ( 'From ' + (event.lowestPrice.value | currency:event.lowestPrice.currency:true )) : ( 'free' | uppercase ) }}\r\n                    </span>\r\n                  </h3>\r\n                  <p class=\"lead pointer\" role=\"button\" [routerLink]=\"['/events', i, 'location']\">{{ event.location.venue }}, {{ event.location.locality }}</p>\r\n                  <p class=\"card-text\">{{ event.description }}</p>\r\n                  <!-- <div id=\"tags\">\r\n                    <span class=\"badge badge-info\" *ngFor=\"let tag of event.tags\">{{ tag }}</span>\r\n                  </div> -->\r\n                  <span id=\"tags\">{{ event.tags.join(', ') }}</span>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n"
 
 /***/ }),
 
-/***/ 236:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"jumbotron jumbotron-fluid bg-primary\">\n  <div class=\"container\">\n    <h1 class=\"display-3 text-white\">It's nothing but trash</h1>\n    <p class=\"lead text-white\">Those who indentify as 'otaku', they sicken me deeply</p>\n  </div>\n</div>\n<!--\n<p>  Debugging is hard:</p>\n{{events | json}}\n<p>\nLike, really hard.\n</p>\n-->\n\n<div class=\"container pt-3\">\n  <div class=\"row\">\n    <div class=\"col-12 mx-auto\">\n      <div class=\"row\">\n        <div class=\"col-lg-12\">\n\n          <div class=\"card card-default mt-4\" *ngFor=\"let event of events; let i = index\">\n            <div class=\"container-fluid\">\n              <div class=\"row\">\n                <img class=\"col-md-3 d-flex cover\" [src]=\"event.cover | safe\" alt=\"Card image cap\">\n                <div class=\"col-md-9 py-3\">\n                  <h3 class=\"card-title\">{{ event.name }} <span class=\"badge badge-success\">{{event.lowestPrice.value}} to {{event.highestPrice.value}}€</span></h3>\n                  <p class=\"card-text\">{{ event.description }}</p>\n                  <div id=\"tags\">\n                    <span class=\"badge badge-info\" *ngFor=\"let tag of event.tags\">{{ tag }}</span>\n                  </div>\n                  <a [routerLink]=\"['/events', i, 'overview']\" class=\"btn btn-primary\">Details</a>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </div>\n"
-
-/***/ }),
-
-/***/ 275:
+/***/ 274:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(126);
@@ -943,7 +941,7 @@ var EventComponent = (function () {
 EventComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-event',
-        template: __webpack_require__(233)
+        template: __webpack_require__(232)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_database_service__["a" /* DatabaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_database_service__["a" /* DatabaseService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object])
 ], EventComponent);
@@ -995,7 +993,7 @@ var HomeComponent = (function () {
 HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-home',
-        template: __webpack_require__(236)
+        template: __webpack_require__(235)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_database_service__["a" /* DatabaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_database_service__["a" /* DatabaseService */]) === "function" && _a || Object])
 ], HomeComponent);
@@ -1027,11 +1025,13 @@ var Event = (function () {
         this.id = id;
         this.cover = db['cover'];
         this.name = db['name'];
+        this.description = db['description'];
         if (db.hasOwnProperty('slug')) {
             this.slug = db['slug'];
         }
-        else
+        else {
             this.slug = this.name.toLowerCase().replace(/\W+/g, '');
+        }
         //regex removes non-alphanumeric characters
         this.location = new __WEBPACK_IMPORTED_MODULE_2__physical_location_model__["a" /* PhysicalLocation */]();
         this.location.loadFromDatabase(db['location']);
@@ -1141,5 +1141,5 @@ var Price = (function () {
 
 /***/ })
 
-},[275]);
+},[274]);
 //# sourceMappingURL=main.bundle.js.map

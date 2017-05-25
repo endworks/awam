@@ -1,3 +1,8 @@
-<sebm-google-map [latitude]="location.coordinates.lat" [longitude]="location.coordinates.lon" [zoom] = "zoom">
-  <sebm-google-map-marker [latitude]="location.coordinates.lat" [longitude]="location.coordinates.lon"></sebm-google-map-marker>
-</sebm-google-map>
+<div class="row mt-4">
+  <div class="col-12">
+    <h2>Location</h2>
+    <sebm-google-map [latitude]="location.coordinates.lat" [longitude]="location.coordinates.lon" [zoom] = "zoom">
+      <sebm-google-map-marker [latitude]="location.coordinates.lat" [longitude]="location.coordinates.lon"></sebm-google-map-marker>
+    </sebm-google-map>
+  </div>
+</div>

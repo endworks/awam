@@ -23,12 +23,18 @@ Like, really hard.
               <div class="row">
                 <img class="col-md-3 d-flex cover" [src]="event.cover | safe" alt="Card image cap">
                 <div class="col-md-9 py-3">
-                  <h3 class="card-title">{{ event.name }} <span class="badge badge-success">{{event.lowestPrice.value}} to {{event.highestPrice.value}}€</span></h3>
+                  <h3 class="card-title pointer" role="button" [routerLink]="['/events', i, 'overview']">
+                    {{ event.name }}
+                    <span class="badge badge-success">
+                      {{ event.lowestPrice.value != 0 ? ( 'From ' + (event.lowestPrice.value | currency:event.lowestPrice.currency:true )) : ( 'free' | uppercase ) }}
+                    </span>
+                  </h3>
+                  <p class="lead pointer" role="button" [routerLink]="['/events', i, 'location']">{{ event.location.venue }}, {{ event.location.locality }}</p>
                   <p class="card-text">{{ event.description }}</p>
-                  <div id="tags">
+                  <!-- <div id="tags">
                     <span class="badge badge-info" *ngFor="let tag of event.tags">{{ tag }}</span>
-                  </div>
-                  <a [routerLink]="['/events', i, 'overview']" class="btn btn-primary">Details</a>
+                  </div> -->
+                  <span id="tags">{{ event.tags.join(', ') }}</span>
                 </div>
               </div>
             </div>

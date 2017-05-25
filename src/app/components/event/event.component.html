@@ -8,6 +8,7 @@
 
 <div class="container">
   <h1 class="display-3">{{ event?.name }}</h1>
+  <h3 class="lead">{{ event?.location.venue }}, {{ event?.location.locality }}</h3>
   <ul class="nav nav-pills">
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/events', id, 'overview']" routerLinkActive="active">Overview</a>
@@ -16,7 +17,13 @@
       <a class="nav-link" [routerLink]="['/events', id, 'schedule']" routerLinkActive="active">Schedule</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/events', id, 'tickets']" routerLinkActive="active">Tickets</a>
+      <a class="nav-link" [routerLink]="['/events', id, 'location']" routerLinkActive="active">Location</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/events', id, 'gallery']" routerLinkActive="active">Gallery</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/events', id, 'reviews']" routerLinkActive="active">Reviews</a>
     </li>
   </ul>
 </div>
@@ -25,30 +32,29 @@
 
 <div class="container pt-3">
   <div class="row">
-    <div class="col-12 mx-auto">
+    <div class="col-9 mx-auto">
       <div class="row">
         <div class="col-lg-12">
 
           <div class="card card-default">
             <div class="col-12">
-              <div class="row bg-primary text-center text-white">
-                <div class="col-4 bg-success py-5">
+              <div class="card-block">
+                <!-- <h3 class="card-title">Card</h3> -->
+                <p class="card-text">{{ event.description }}</p>
+              </div>
+              <div class="row text-center">
+                <div class="col py-3">
                   <h1 class="m-b-2"><i class="fa fa-calendar-o display-2"></i></h1>
                   <h6 class="text-light">{{ event?.schedule.length }} days</h6>
                 </div>
-                <div class="col-4 bg-danger py-5">
+                <div class="col py-3">
                   <h1 class="m-b-2"><i class="fa fa-check-square-o display-2"></i></h1>
                   <h6 class="text-light">{{ event?.schedule[0]?.activities?.length ? event?.schedule[0]?.activities?.length : '0' }} activities</h6>
                 </div>
-                <div class="col-4 bg-primary py-5">
+                <div class="col py-3">
                   <h1 class="m-b-2"><i class="fa fa-ticket display-2"></i></h1>
                   <h6 class="text-light">{{ event?.tickets.length }} tickets</h6>
                 </div>
-              </div>
-              <div class="card-block">
-                <h3 class="card-title">Card</h3>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-outline-secondary">Outline</a>
               </div>
             </div>
           </div>
@@ -57,10 +63,22 @@
 
           <app-dates [schedule] = "event?.schedule"></app-dates>
 
-          <app-event-map [location] = "event?.location" [zoom] = 12></app-event-map>
+          <app-event-map [location] = "event?.location"></app-event-map>
 
           <app-reviews [reviews]="event?.reviews"></app-reviews>
 
+        </div>
+      </div>
+    </div>
+    <div class="col-3 mx-auto">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card card-default">
+            <div class="card-block">
+              <h3 class="card-title">Card</h3>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
     <h2>Schedule</h2>
   </div>
   <ng-container *ngIf="schedule.length > 0">
-    <div class="col-sm-6" *ngFor="let day of schedule">
+    <div class="col" *ngFor="let day of schedule">
       <div class="card card-inverse card-info text-center pt-2 mb-4">
         <div class="card-block card-title">
           <h1 class="m-b-2"><i class="fa fa-calendar display-2"></i> {{ day.start | date:'shortDate'}}</h1>

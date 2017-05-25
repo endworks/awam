@@ -10,6 +10,7 @@ export class Event{
   id: number;
   cover: string;
   name: string;
+  description: string;
   slug: string;
   pricing: string; //Paid, Free, Other
   tags: string[];
@@ -29,10 +30,12 @@ export class Event{
     this.id = id;
     this.cover = db['cover'];
     this.name = db['name'];
+    this.description = db['description'];
     if(db.hasOwnProperty('slug')){
       this.slug = db['slug'];
+    } else {
+      this.slug = this.name.toLowerCase().replace(/\W+/g, '');
     }
-    else this.slug = this.name.toLowerCase().replace(/\W+/g, '')
     //regex removes non-alphanumeric characters
     this.location = new PhysicalLocation();
     this.location.loadFromDatabase(db['location']);

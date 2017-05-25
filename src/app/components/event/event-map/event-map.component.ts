@@ -8,13 +8,13 @@ import { AgmCoreModule } from 'angular2-google-maps/core'
   templateUrl: './event-map.component.html',
   styles: [`
     .sebm-google-map-container {
-    height: 200px;
+    height: 400px;
     }`]
 })
 export class EventMapComponent implements OnInit {
 
   @Input() location : PhysicalLocation;
-  @Input() zoom? = 12
+  zoom = 14;
 
   constructor() { }
 

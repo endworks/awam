@@ -7,7 +7,9 @@ const app_routes: Routes = [
   { path: 'events', component: HomeComponent },
   { path: 'events/:id/overview', component: EventComponent },
   { path: 'events/:id/schedule', component: EventComponent },
-  { path: 'events/:id/tickets', component: EventComponent },
+  { path: 'events/:id/location', component: EventComponent },
+  { path: 'events/:id/reviews', component: EventComponent },
+  { path: 'events/:id/gallery', component: EventComponent },
   { path: 'admin', component: HomeComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
