@@ -51,7 +51,7 @@
           <div class="col py-3">
             <h1 class="m-b-2"><i class="fa fa-ticket display-2 text-warning"></i></h1>
             <h5 class="text-light">{{ event?.tickets.length }} Tickets</h5>
-            <h6 class="text-muted">{{ event?.lowestPrice.value != 0 ? ( 'From ' + (event?.lowestPrice.value | currency:event?.lowestPrice.currency:true )) : ( 'free' | uppercase ) }}</h6>
+            <h6 class="text-muted">{{ event?.tickets | lowestPrice }}</h6>
           </div>
         </div>
       </div>
