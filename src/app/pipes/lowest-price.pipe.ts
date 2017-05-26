@@ -12,14 +12,20 @@ import { Price } from './../models/price.model';
 export class LowestPricePipe implements PipeTransform {
   transform(tickets: Ticket[]): any {
     var lowestPrice = new Price(Infinity, 'EUR');
+    var free = true;
       for(let ticket of tickets){
         if(ticket.price.currency == 'EUR'){
           if(ticket.price.value < lowestPrice.value){
             var lowestPrice = ticket.price;
           }
+          if(free){
+            if(ticket.price.value != 0){
+              free = false;
+            }
+          }
         }
       }
-    if(lowestPrice.value == 0){
+    if(free){
       return 'Free';
     }
     return "From "+ new CurrencyPipe('en-us').transform(lowestPrice.value, lowestPrice.currency, true);
