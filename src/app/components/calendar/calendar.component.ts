@@ -1,6 +1,5 @@
 //TODO:
 //optimize
-//make buttons work for years
 import { Component, AfterViewChecked , Input } from '@angular/core';
 import { Event } from '../../models/event.model'
 import { Subject } from 'rxjs/Subject';
