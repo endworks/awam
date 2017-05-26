@@ -46,6 +46,12 @@
     </ng-template>
   </div>
 </div>
+<div
+  class="btn btn-secondary"
+  style="cursor: pointer;"
+  (click)="monthSelectorActivated=false;yearSelectorActivated=false;viewDate=resetDate;">
+  Reset
+</div>
 <br>
 <div *ngIf="yearSelectorActivated==false; else yearSelector">
   <div *ngIf="monthSelectorActivated==false; else monthSelector">

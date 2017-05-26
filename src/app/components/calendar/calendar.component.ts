@@ -1,4 +1,5 @@
 //TODO:
+//make events clickable
 //optimize
 import { Component, AfterViewChecked , Input } from '@angular/core';
 import { Event } from '../../models/event.model'
@@ -45,6 +46,7 @@ export class CalendarComponent implements AfterViewChecked  {
   @Input() events: Array<Event>;
   calendarEvents: CalendarEvent[] = [];
   viewDate: Date = new Date();
+  resetDate: Date = new Date();
   refresh: Subject<any> = new Subject();
   monthSelectorActivated = false;
   yearSelectorActivated = false;
