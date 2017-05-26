@@ -1,3 +1,5 @@
+//TODO:
+//make monthSelector be able to change between years
 import { Component, AfterViewChecked , Input } from '@angular/core';
 import { Event } from '../../models/event.model'
 import { Subject } from 'rxjs/Subject';
@@ -18,6 +20,15 @@ const colors: any = {
   }
 };
 
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+interface Month {
+  name: string;
+  numberOfEvents: number;
+  date: Date;
+  year: number;
+}
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -29,11 +40,21 @@ export class CalendarComponent implements AfterViewChecked  {
   calendarEvents: CalendarEvent[] = [];
   viewDate: Date = new Date();
   refresh: Subject<any> = new Subject();
+  monthSelectorActivated = false;
+  months: Array<Month[]> = [];
+  currentYear: string;
 
-
-  constructor() {}
+  constructor() {
+    this.currentYear = new Date().getFullYear().toString();
+    this.initializeYear(this.currentYear);
+  }
 
   ngAfterViewChecked() {
+    for(let year in this.months){
+      for(let month of this.months[year]){
+        month.numberOfEvents = 0;
+      }
+    }
     this.calendarEvents = [];
     for(let event of this.events){
       for(let day of event.schedule){
@@ -42,10 +63,29 @@ export class CalendarComponent implements AfterViewChecked  {
           end: day.end,
           title: event.name,
           color: colors.red}
-        this.calendarEvents.push(calendarEvent)
+        this.calendarEvents.push(calendarEvent);
       }
+      let day = event.schedule[0].start;
+      let year = day.getFullYear()
+      if(!(year in this.months)){
+        this.initializeYear(year);
+      }
+      this.months[year][day.getMonth()].numberOfEvents += 1;
     }
 
   }
 
+  initializeYear(year: number|string){
+    year = year.toString()
+    this.months[year] = [];
+    for(let index in monthNames){
+      let month = {
+        name: monthNames[index],
+        numberOfEvents: 0,
+        year: year,
+        date: new Date(Number(year), Number(index), 1, 0, 0, 0)
+      }
+      this.months[year].push(month)
+    }
+  }
 }
