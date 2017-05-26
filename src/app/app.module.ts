@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CurrencyPipe } from '@angular/common'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/elements/navbar/navbar.component';
@@ -24,6 +25,7 @@ import { TicketsComponent } from './components/event/tickets/tickets.component';
 import { EventMapComponent } from './components/event/event-map/event-map.component';
 import { GoogleMapsDirectionsDirective } from './directives/google-maps-directions.directive';
 import { DatesComponent } from './components/event/dates/dates.component';
+import { LowestPricePipe } from './pipes/lowest-price.pipe';
 //import { MapDirectionsComponent } from './components/map-directions/map-directions.component';
 
 @NgModule({
@@ -39,6 +41,7 @@ import { DatesComponent } from './components/event/dates/dates.component';
     EventMapComponent,
     GoogleMapsDirectionsDirective,
     DatesComponent,
+    LowestPricePipe,
     //MapDirectionsComponent
   ],
   imports: [
@@ -49,7 +52,10 @@ import { DatesComponent } from './components/event/dates/dates.component';
     AngularFireModule.initializeApp(environment.firebase),
     AgmCoreModule.forRoot(environment.gmaps)
   ],
-  providers: [DatabaseService, AngularFireDatabase, { provide: LOCALE_ID, useValue: "en-GB" }],
+  providers: [
+    DatabaseService,
+    AngularFireDatabase, { provide: LOCALE_ID, useValue: "en-GB" },
+    CurrencyPipe],
   bootstrap: [AppComponent]
 })
 

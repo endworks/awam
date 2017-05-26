@@ -26,7 +26,7 @@ Like, really hard.
                   <h3 class="card-title pointer" role="button" [routerLink]="['/events', i, 'overview']">
                     {{ event.name }}
                     <span class="badge badge-info">
-                      {{ event.lowestPrice.value != 0 ? ( 'From ' + (event.lowestPrice.value | currency:event.lowestPrice.currency:true )) : ( 'free' | uppercase ) }}
+                      {{ event?.tickets | lowestPrice }}
                     </span>
                   </h3>
                   <p class="lead pointer" role="button" [routerLink]="['/events', i, 'location']">{{ event?.location.venue }}, {{ event?.location.locality }}, {{ event?.location.country }} <small>{{ event.schedule[0].start | date }}</small></p>

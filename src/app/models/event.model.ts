@@ -23,8 +23,6 @@ export class Event{
   //WIP:
   //photos: Photo[];
 
-  lowestPrice : Price;
-  highestPrice : Price;
   loadFromDatabase(id:number, db: any){
 
     this.id = id;
@@ -69,22 +67,5 @@ export class Event{
         this.schedule.push(schedule_day);
       }
     }
-    this.calculatePrices()
-  }
-  calculatePrices(){
-    var lowestPrice = new Price(Infinity, 'EUR')
-    var highestPrice = new Price(0, 'EUR')
-    for(let ticket of this.tickets){
-      if(ticket.price.currency == 'EUR'){
-        if(ticket.price.value > highestPrice.value){
-          var highestPrice = ticket.price
-        }
-        else if(ticket.price.value < lowestPrice.value){
-          var lowestPrice = ticket.price
-        }
-      }
-    }
-    this.lowestPrice = lowestPrice
-    this.highestPrice = highestPrice
   }
 }
