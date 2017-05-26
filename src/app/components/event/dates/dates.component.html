@@ -1,0 +1,20 @@
+<div class="row text-center mt-5 mb-5">
+  <div class="col-sm-12">
+    <h2 class="display-4">Schedule</h2>
+  </div>
+  <ng-container *ngIf="schedule.length > 0">
+    <div class="col" *ngFor="let day of schedule">
+      <div class="text-center pt-2 mb-4">
+        <div class="title">
+          <h1 class="m-b-2"><i class="fa fa-calendar-o display-2 text-primary"></i> {{ day.start | date }}</h1>
+          <h6 class="text-light lead">{{ day.start | date:'shortTime'}} - {{ day.end | date:'shortTime'}}</h6>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="schedule.length == 0">
+    <div class="col-sm-12">
+      <h6 class="text-light lead">No schedule information available...</h6>
+    </div>
+  </ng-container>
+</div>

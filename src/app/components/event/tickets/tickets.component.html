@@ -1,16 +1,25 @@
-<div class="row">
-  <div class="col-12">
-    <h2>Tickets</h2>
-    <div class="row">
-      <div class="col-md-4" *ngFor="let ticket of tickets">
-        <h4>{{ ticket.name }} <span class="badge badge-info">{{ ticket.type }}</span></h4>
-        <p>{{ ticket.price.conditions }} <strong>{{ ticket.price.value }} {{ ticket.price.currency }}</strong></p>
+<div class="row text-center mt-5 mb-5">
+    <div class="col-sm-12">
+      <h2 class="display-4">Tickets</h2>
+    </div>
+    <ng-container *ngIf="tickets.length > 0">
+      <div class="col-sm-6" *ngFor="let ticket of tickets">
+        <div class="card card-faded text-center pt-2 mb-4">
+          <div class="card-block card-title">
+            <h1 class="m-b-2"><i class="fa {{ ticket.type == 'pass'? 'fa-id-badge' : 'fa-ticket'}} display-2 text-warning"></i> {{ ticket.price.value | currency:ticket.price.currency:true }}</h1>
+            <h5 class="text-light lead">{{ ticket.name }}</h5>
+            <h6 class="text-light">{{ ticket.price.conditions }}</h6>
+          </div>
+        </div>
       </div>
+    </ng-container>
+    <ng-container *ngIf="tickets.length == 0">
+      <div class="col-sm-12">
+        <h5>No tickets information available...</h5>
+      </div>
+    </ng-container>
+
+    <div class="col-sm-12" *ngIf="ticketSeller">
+      <a class="btn btn-secondary" href="{{ ticketSeller }}" role="button">Buy tickets »</a>
     </div>
-    <div *ngIf="ticketSeller">
-      <h5>Ticket seller:
-        <a href={{ticketSeller}}>{{ticketSeller}}</a>
-      </h5>
-    </div>
-  </div>
 </div>

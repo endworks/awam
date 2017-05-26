@@ -10,6 +10,7 @@ export class Event{
   id: number;
   cover: string;
   name: string;
+  description: string;
   slug: string;
   pricing: string; //Paid, Free, Other
   tags: string[];
@@ -22,17 +23,17 @@ export class Event{
   //WIP:
   //photos: Photo[];
 
-  lowestPrice : Price;
-  highestPrice : Price;
   loadFromDatabase(id:number, db: any){
 
     this.id = id;
     this.cover = db['cover'];
     this.name = db['name'];
+    this.description = db['description'];
     if(db.hasOwnProperty('slug')){
       this.slug = db['slug'];
+    } else {
+      this.slug = this.name.toLowerCase().replace(/\W+/g, '');
     }
-    else this.slug = this.name.toLowerCase().replace(/\W+/g, '')
     //regex removes non-alphanumeric characters
     this.location = new PhysicalLocation();
     this.location.loadFromDatabase(db['location']);
@@ -66,22 +67,5 @@ export class Event{
         this.schedule.push(schedule_day);
       }
     }
-    this.calculatePrices()
-  }
-  calculatePrices(){
-    var lowestPrice = new Price(Infinity, 'EUR')
-    var highestPrice = new Price(0, 'EUR')
-    for(let ticket of this.tickets){
-      if(ticket.price.currency == 'EUR'){
-        if(ticket.price.value > highestPrice.value){
-          var highestPrice = ticket.price
-        }
-        else if(ticket.price.value < lowestPrice.value){
-          var lowestPrice = ticket.price
-        }
-      }
-    }
-    this.lowestPrice = lowestPrice
-    this.highestPrice = highestPrice
   }
 }

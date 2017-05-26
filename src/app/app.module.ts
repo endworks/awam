@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CurrencyPipe } from '@angular/common'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/elements/navbar/navbar.component';
@@ -12,6 +13,7 @@ import { EventComponent } from './components/event/event.component';
 import { DatabaseService } from './services/database.service';
 
 import { app_routing } from './app.routes';
+import { LOCALE_ID } from '@angular/core';
 import { environment } from './environments/environment';
 
 import { CalendarModule } from 'angular-calendar';
@@ -24,6 +26,8 @@ import { ReviewsComponent } from './components/event/reviews/reviews.component';
 import { TicketsComponent } from './components/event/tickets/tickets.component';
 import { EventMapComponent } from './components/event/event-map/event-map.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { DatesComponent } from './components/event/dates/dates.component';
+import { LowestPricePipe } from './pipes/lowest-price.pipe';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     TicketsComponent,
     EventMapComponent,
     CalendarComponent,
+    DatesComponent,
+    LowestPricePipe,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,10 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     BrowserAnimationsModule,
     CalendarModule.forRoot()
   ],
-  providers: [DatabaseService, AngularFireDatabase],
+  providers: [
+    DatabaseService,
+    AngularFireDatabase, { provide: LOCALE_ID, useValue: "en-GB" },
+    CurrencyPipe],
   bootstrap: [AppComponent]
 })
 

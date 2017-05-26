@@ -7,7 +7,8 @@
 </div>
 
 <div class="container">
-  <h1 class="display-3">{{ event?.name }}</h1>
+  <h1 class="display-3 pt-5">{{ event?.name }}</h1>
+  <h3 class="lead pb-4">{{ event?.location.venue }}, {{ event?.location.locality }}, {{ event?.location.country }}</h3>
   <ul class="nav nav-pills">
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/events', id, 'overview']" routerLinkActive="active">Overview</a>
@@ -16,42 +17,53 @@
       <a class="nav-link" [routerLink]="['/events', id, 'schedule']" routerLinkActive="active">Schedule</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/events', id, 'tickets']" routerLinkActive="active">Tickets</a>
+      <a class="nav-link" [routerLink]="['/events', id, 'location']" routerLinkActive="active">Location</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/events', id, 'gallery']" routerLinkActive="active">Gallery</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/events', id, 'reviews']" routerLinkActive="active">Reviews</a>
     </li>
   </ul>
 </div>
 
-          <hr>
+<hr>
 
-<div class="container">
+<div class="container pt-4">
 
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-12 col-md-9">
-
-          <!--Tickets-->
-          <div *ngIf="event?.tickets[0]; else elseBlock">
-            <app-tickets [tickets] = "event?.tickets" [ticketSeller] = "event?.ticketSeller"></app-tickets>
+  <div class="row">
+    <section class="jumbotron bg-faded text-center">
+      <div class="container">
+        <h1 class="display-4">About this</h1>
+        <p class="lead text-muted">{{ event?.description }}</p>
+        <div class="row text-center">
+          <div class="col py-3">
+            <h1 class="m-b-2"><i class="fa fa-calendar-o display-2 text-primary"></i></h1>
+            <h5 class="text-light">{{ event?.schedule.length }} Days</h5>
+            <h6 class="text-muted">Starts at {{ event?.schedule[0].start | date }}</h6>
           </div>
-          <ng-template #elseBlock>
-            <h5>No ticket information available.</h5>
-          </ng-template>
-          <hr>
-
-          <!-- Reviews -->
-          <app-reviews [reviews]="event?.reviews"></app-reviews>
-        </div>
-
-        <!-- sidebar -->
-        <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
-          <ul class="list-group">
-            <li class="list-group-item" *ngFor="let day of event?.schedule">
-              <strong>{{ day.start | date:'yMMMMEEEEd'}}</strong> <em>{{ day.start | date:'shortTime'}}-{{ day.end | date:'shortTime'}}</em>
-            </li>
-          </ul>
-          <!-- Directions -->
-          <h2>Location:</h2>
-          <app-event-map [location] = "event?.location" [zoom] = 12></app-event-map>
+          <div class="col py-3">
+            <h1 class="m-b-2"><i class="fa fa-check-square-o display-2 text-success"></i></h1>
+            <h5 class="text-light">{{ event?.schedule[0]?.activities?.length ? event?.schedule[0]?.activities?.length : '0' }} Tournaments</h5>
+            <h6 class="text-muted">{{ event?.schedule[0]?.activities?.length ? event?.schedule[0]?.activities?.length : '0' }} Activities</h6>
+          </div>
+          <div class="col py-3">
+            <h1 class="m-b-2"><i class="fa fa-ticket display-2 text-warning"></i></h1>
+            <h5 class="text-light">{{ event?.tickets.length }} Tickets</h5>
+            <h6 class="text-muted">{{ event?.lowestPrice.value != 0 ? ( 'From ' + (event?.lowestPrice.value | currency:event?.lowestPrice.currency:true )) : ( 'free' | uppercase ) }}</h6>
+          </div>
         </div>
       </div>
+    </section>
+  </div>
 
-    </div>
+  <app-tickets [tickets] = "event?.tickets" [ticketSeller] = "event?.ticketSeller"></app-tickets>
+
+  <app-event-map [location] = "event?.location"></app-event-map>
+
+  <app-dates [schedule] = "event?.schedule"></app-dates>
+
+  <app-reviews [reviews]="event?.reviews"></app-reviews>
+
+</div>
