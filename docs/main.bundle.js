@@ -1,6 +1,6 @@
 webpackJsonp([1,5],{
 
-/***/ 125:
+/***/ 124:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9,20 +9,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 125;
+webpackEmptyContext.id = 124;
 
 
 /***/ }),
 
-/***/ 126:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(154);
 
 
 
@@ -35,7 +35,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 138:
+/***/ 137:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66,32 +66,33 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ 139:
+/***/ 138:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_elements_navbar_navbar_component__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_home_home_component__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_event_event_component__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_database_service__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routes__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__environments_environment__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular2_google_maps_core__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular2_google_maps_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_angular2_google_maps_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angularfire2__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2_database__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pipes_safe_pipe__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_elements_footer_footer_component__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_event_reviews_reviews_component__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_event_tickets_tickets_component__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_event_event_map_event_map_component__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__directives_google_maps_directions_directive__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_event_dates_dates_component__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_elements_navbar_navbar_component__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_event_event_component__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_database_service__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routes__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__environments_environment__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_google_maps_core__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_google_maps_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_angular2_google_maps_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angularfire2_database__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pipes_safe_pipe__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_elements_footer_footer_component__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_event_reviews_reviews_component__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_event_tickets_tickets_component__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_event_event_map_event_map_component__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_event_dates_dates_component__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pipes_lowest_price_pipe__ = __webpack_require__(152);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -99,6 +100,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -130,28 +132,32 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components_elements_navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__components_event_event_component__["a" /* EventComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__pipes_safe_pipe__["a" /* SafePipe */],
-            __WEBPACK_IMPORTED_MODULE_15__components_elements_footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_event_reviews_reviews_component__["a" /* ReviewsComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_event_tickets_tickets_component__["a" /* TicketsComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_event_event_map_event_map_component__["a" /* EventMapComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__directives_google_maps_directions_directive__["a" /* GoogleMapsDirectionsDirective */],
+            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__components_elements_navbar_navbar_component__["a" /* NavbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__components_event_event_component__["a" /* EventComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__pipes_safe_pipe__["a" /* SafePipe */],
+            __WEBPACK_IMPORTED_MODULE_16__components_elements_footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_event_reviews_reviews_component__["a" /* ReviewsComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_event_tickets_tickets_component__["a" /* TicketsComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_event_event_map_event_map_component__["a" /* EventMapComponent */],
             __WEBPACK_IMPORTED_MODULE_20__components_event_dates_dates_component__["a" /* DatesComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__pipes_lowest_price_pipe__["a" /* LowestPricePipe */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_9__app_routes__["a" /* app_routing */],
-            __WEBPACK_IMPORTED_MODULE_12_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_10__environments_environment__["a" /* environment */].firebase),
-            __WEBPACK_IMPORTED_MODULE_11_angular2_google_maps_core__["AgmCoreModule"].forRoot(__WEBPACK_IMPORTED_MODULE_10__environments_environment__["a" /* environment */].gmaps)
+            __WEBPACK_IMPORTED_MODULE_10__app_routes__["a" /* app_routing */],
+            __WEBPACK_IMPORTED_MODULE_13_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_11__environments_environment__["a" /* environment */].firebase),
+            __WEBPACK_IMPORTED_MODULE_12_angular2_google_maps_core__["AgmCoreModule"].forRoot(__WEBPACK_IMPORTED_MODULE_11__environments_environment__["a" /* environment */].gmaps)
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_8__services_database_service__["a" /* DatabaseService */], __WEBPACK_IMPORTED_MODULE_13_angularfire2_database__["a" /* AngularFireDatabase */], { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["LOCALE_ID"], useValue: "en-GB" }],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_9__services_database_service__["a" /* DatabaseService */],
+            __WEBPACK_IMPORTED_MODULE_14_angularfire2_database__["a" /* AngularFireDatabase */], { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["LOCALE_ID"], useValue: "en-GB" },
+            __WEBPACK_IMPORTED_MODULE_4__angular_common__["a" /* CurrencyPipe */]
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -159,7 +165,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 140:
+/***/ 139:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -186,7 +192,7 @@ var app_routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterMod
 
 /***/ }),
 
-/***/ 141:
+/***/ 140:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -221,7 +227,7 @@ FooterComponent = __decorate([
 
 /***/ }),
 
-/***/ 142:
+/***/ 141:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -256,7 +262,7 @@ NavbarComponent = __decorate([
 
 /***/ }),
 
-/***/ 143:
+/***/ 142:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -295,7 +301,7 @@ DatesComponent = __decorate([
 
 /***/ }),
 
-/***/ 144:
+/***/ 143:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -339,7 +345,7 @@ var _a;
 
 /***/ }),
 
-/***/ 145:
+/***/ 144:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -378,7 +384,7 @@ ReviewsComponent = __decorate([
 
 /***/ }),
 
-/***/ 146:
+/***/ 145:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -421,124 +427,7 @@ TicketsComponent = __decorate([
 
 /***/ }),
 
-/***/ 147:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GoogleMapsDirectionsDirective; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-//Lots of thanks to Github user marimuthum17 for providing this code!
-//Original thread: https://github.com/SebastianM/angular-google-maps/issues/495#issuecomment-277603624
-//Article in his website: http://www.17educations.com/angularjs-2/google-map-directions-display-angular-2/
-
-
-var GoogleMapsDirectionsDirective = (function () {
-    function GoogleMapsDirectionsDirective(gmapsApi) {
-        this.gmapsApi = gmapsApi;
-    }
-    GoogleMapsDirectionsDirective.prototype.updateDirections = function () {
-        var _this = this;
-        this.gmapsApi.getNativeMap().then(function (map) {
-            if (!_this.originPlaceId || !_this.destinationPlaceId) {
-                return;
-            }
-            var directionsService = new google.maps.DirectionsService;
-            var me = _this;
-            var latLngA = new google.maps.LatLng({ lat: _this.origin.latitude, lng: _this.origin.longitude });
-            var latLngB = new google.maps.LatLng({ lat: _this.destination.latitude, lng: _this.destination.longitude });
-            _this.directionsDisplay.setMap(map);
-            _this.directionsDisplay.setOptions({
-                polylineOptions: {
-                    strokeWeight: 8,
-                    strokeOpacity: 0.7,
-                    strokeColor: '#00468c'
-                }
-            });
-            _this.directionsDisplay.setDirections({ routes: [] });
-            directionsService.route({
-                origin: { placeId: _this.originPlaceId },
-                destination: { placeId: _this.destinationPlaceId },
-                avoidHighways: true,
-                travelMode: google.maps.DirectionsTravelMode.DRIVING
-                //travelMode: 'DRIVING'
-            }, function (response, status) {
-                if (status === 'OK') {
-                    me.directionsDisplay.setDirections(response);
-                    map.setZoom(30);
-                    //console.log(me.getcomputeDistance (latLngA, latLngB));
-                    var point = response.routes[0].legs[0];
-                    me.estimatedTime = point.duration.text;
-                    me.estimatedDistance = point.distance.text;
-                    console.log(me.estimatedTime);
-                    console.log('Estimated travel time: ' + point.duration.text + ' (' + point.distance.text + ')');
-                }
-                else {
-                    console.log('Directions request failed due to ' + status);
-                }
-            });
-        });
-    };
-    GoogleMapsDirectionsDirective.prototype.getcomputeDistance = function (latLngA, latLngB) {
-        return (google.maps.geometry.spherical.computeDistanceBetween(latLngA, latLngB) / 1000).toFixed(2);
-    };
-    return GoogleMapsDirectionsDirective;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], GoogleMapsDirectionsDirective.prototype, "origin", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], GoogleMapsDirectionsDirective.prototype, "destination", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], GoogleMapsDirectionsDirective.prototype, "originPlaceId", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], GoogleMapsDirectionsDirective.prototype, "destinationPlaceId", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], GoogleMapsDirectionsDirective.prototype, "waypoints", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], GoogleMapsDirectionsDirective.prototype, "directionsDisplay", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], GoogleMapsDirectionsDirective.prototype, "estimatedTime", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], GoogleMapsDirectionsDirective.prototype, "estimatedDistance", void 0);
-GoogleMapsDirectionsDirective = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"])({
-        selector: 'sebm-google-map-directions'
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core__["GoogleMapsAPIWrapper"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core__["GoogleMapsAPIWrapper"]) === "function" && _a || Object])
-], GoogleMapsDirectionsDirective);
-
-var _a;
-//# sourceMappingURL=google-maps-directions.directive.js.map
-
-/***/ }),
-
-/***/ 148:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -561,7 +450,7 @@ var environment = {
 
 /***/ }),
 
-/***/ 149:
+/***/ 147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -619,11 +508,11 @@ var Guest = (function (_super) {
 
 /***/ }),
 
-/***/ 150:
+/***/ 148:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__user_model__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__user_model__ = __webpack_require__(151);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Review; });
 
 var Review = (function () {
@@ -643,11 +532,11 @@ var Review = (function () {
 
 /***/ }),
 
-/***/ 151:
+/***/ 149:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__activity_model__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__activity_model__ = __webpack_require__(147);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScheduleDay; });
 
 var ScheduleDay = (function () {
@@ -679,7 +568,7 @@ var ScheduleDay = (function () {
 
 /***/ }),
 
-/***/ 152:
+/***/ 150:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -701,7 +590,7 @@ var Ticket = (function () {
 
 /***/ }),
 
-/***/ 153:
+/***/ 151:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -716,7 +605,63 @@ var User = (function () {
 
 /***/ }),
 
-/***/ 154:
+/***/ 152:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_price_model__ = __webpack_require__(81);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LowestPricePipe; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+//TODO:
+//implement currency rates
+//update locale
+
+
+
+var LowestPricePipe = (function () {
+    function LowestPricePipe() {
+    }
+    LowestPricePipe.prototype.transform = function (tickets) {
+        var lowestPrice = new __WEBPACK_IMPORTED_MODULE_2__models_price_model__["a" /* Price */](Infinity, 'EUR');
+        var free = true;
+        for (var _i = 0, tickets_1 = tickets; _i < tickets_1.length; _i++) {
+            var ticket = tickets_1[_i];
+            if (ticket.price.currency == 'EUR') {
+                if (ticket.price.value < lowestPrice.value) {
+                    var lowestPrice = ticket.price;
+                }
+                if (free) {
+                    if (ticket.price.value != 0) {
+                        free = false;
+                    }
+                }
+            }
+        }
+        if (free) {
+            return 'Free';
+        }
+        return "From " + new __WEBPACK_IMPORTED_MODULE_1__angular_common__["a" /* CurrencyPipe */]('en-us').transform(lowestPrice.value, lowestPrice.currency, true);
+    };
+    return LowestPricePipe;
+}());
+LowestPricePipe = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
+        name: 'lowestPrice'
+    })
+], LowestPricePipe);
+
+//# sourceMappingURL=lowest-price.pipe.js.map
+
+/***/ }),
+
+/***/ 153:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -755,7 +700,7 @@ var _a;
 
 /***/ }),
 
-/***/ 155:
+/***/ 154:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -775,7 +720,7 @@ var environment = {
 /***/ 220:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(26)();
+exports = module.exports = __webpack_require__(27)();
 // imports
 
 
@@ -849,14 +794,14 @@ module.exports = "<div class=\"row text-center mt-5 mb-5\">\r\n    <div class=\"
 /***/ 235:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid bg-inverse\">\r\n  <div class=\"container\">\r\n    <h1 class=\"display-3 text-white\">It's nothing but trash</h1>\r\n    <p class=\"lead text-white\">Those who indentify as 'otaku', they sicken me deeply</p>\r\n  </div>\r\n</div>\r\n<!--\r\n<p>  Debugging is hard:</p>\r\n{{events | json}}\r\n<p>\r\nLike, really hard.\r\n</p>\r\n-->\r\n\r\n<div class=\"container pt-3\">\r\n  <div class=\"row\">\r\n    <div class=\"col-12 mx-auto\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n\r\n          <div class=\"card card-default mt-4\" *ngFor=\"let event of events; let i = index\">\r\n            <div class=\"container-fluid\">\r\n              <div class=\"row\">\r\n                <img class=\"col-md-3 d-flex cover\" [src]=\"event.cover | safe\" alt=\"Card image cap\">\r\n                <div class=\"col-md-9 py-3\">\r\n                  <h3 class=\"card-title pointer\" role=\"button\" [routerLink]=\"['/events', i, 'overview']\">\r\n                    {{ event.name }}\r\n                    <span class=\"badge badge-info\">\r\n                      {{ event.lowestPrice.value != 0 ? ( 'From ' + (event.lowestPrice.value | currency:event.lowestPrice.currency:true )) : ( 'free' | uppercase ) }}\r\n                    </span>\r\n                  </h3>\r\n                  <p class=\"lead pointer\" role=\"button\" [routerLink]=\"['/events', i, 'location']\">{{ event?.location.venue }}, {{ event?.location.locality }}, {{ event?.location.country }} <small>{{ event.schedule[0].start | date }}</small></p>\r\n                  <p class=\"card-text text-muted\">{{ event.description }}</p>\r\n                  <!-- <div id=\"tags\">\r\n                    <span class=\"badge badge-info\" *ngFor=\"let tag of event.tags\">{{ tag }}</span>\r\n                  </div> -->\r\n                  <span id=\"tags\">{{ event.tags.join(', ') }}</span>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n"
+module.exports = "<div class=\"jumbotron jumbotron-fluid bg-inverse\">\r\n  <div class=\"container\">\r\n    <h1 class=\"display-3 text-white\">It's nothing but trash</h1>\r\n    <p class=\"lead text-white\">Those who indentify as 'otaku', they sicken me deeply</p>\r\n  </div>\r\n</div>\r\n<!--\r\n<p>  Debugging is hard:</p>\r\n{{events | json}}\r\n<p>\r\nLike, really hard.\r\n</p>\r\n-->\r\n\r\n<div class=\"container pt-3\">\r\n  <div class=\"row\">\r\n    <div class=\"col-12 mx-auto\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n\r\n          <div class=\"card card-default mt-4\" *ngFor=\"let event of events; let i = index\">\r\n            <div class=\"container-fluid\">\r\n              <div class=\"row\">\r\n                <img class=\"col-md-3 d-flex cover\" [src]=\"event.cover | safe\" alt=\"Card image cap\">\r\n                <div class=\"col-md-9 py-3\">\r\n                  <h3 class=\"card-title pointer\" role=\"button\" [routerLink]=\"['/events', i, 'overview']\">\r\n                    {{ event.name }}\r\n                    <span class=\"badge badge-info\">\r\n                      {{ event?.tickets | lowestPrice }}\r\n                    </span>\r\n                  </h3>\r\n                  <p class=\"lead pointer\" role=\"button\" [routerLink]=\"['/events', i, 'location']\">{{ event?.location.venue }}, {{ event?.location.locality }}, {{ event?.location.country }} <small>{{ event.schedule[0].start | date }}</small></p>\r\n                  <p class=\"card-text text-muted\">{{ event.description }}</p>\r\n                  <!-- <div id=\"tags\">\r\n                    <span class=\"badge badge-info\" *ngFor=\"let tag of event.tags\">{{ tag }}</span>\r\n                  </div> -->\r\n                  <span id=\"tags\">{{ event.tags.join(', ') }}</span>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n"
 
 /***/ }),
 
 /***/ 274:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(126);
+module.exports = __webpack_require__(125);
 
 
 /***/ }),
@@ -866,7 +811,7 @@ module.exports = __webpack_require__(126);
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(89);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1008,13 +953,11 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__review_model__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ticket_model__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__review_model__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ticket_model__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__physical_location_model__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__schedule_model__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__price_model__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__schedule_model__ = __webpack_require__(149);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Event; });
-
 
 
 
@@ -1022,6 +965,8 @@ var _a;
 var Event = (function () {
     function Event() {
     }
+    //WIP:
+    //photos: Photo[];
     Event.prototype.loadFromDatabase = function (id, db) {
         this.id = id;
         this.cover = db['cover'];
@@ -1065,24 +1010,6 @@ var Event = (function () {
                 this.schedule.push(schedule_day);
             }
         }
-        this.calculatePrices();
-    };
-    Event.prototype.calculatePrices = function () {
-        var lowestPrice = new __WEBPACK_IMPORTED_MODULE_4__price_model__["a" /* Price */](Infinity, 'EUR');
-        var highestPrice = new __WEBPACK_IMPORTED_MODULE_4__price_model__["a" /* Price */](0, 'EUR');
-        for (var _i = 0, _a = this.tickets; _i < _a.length; _i++) {
-            var ticket = _a[_i];
-            if (ticket.price.currency == 'EUR') {
-                if (ticket.price.value > highestPrice.value) {
-                    var highestPrice = ticket.price;
-                }
-                else if (ticket.price.value < lowestPrice.value) {
-                    var lowestPrice = ticket.price;
-                }
-            }
-        }
-        this.lowestPrice = lowestPrice;
-        this.highestPrice = highestPrice;
     };
     return Event;
 }());
