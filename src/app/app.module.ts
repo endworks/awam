@@ -23,9 +23,7 @@ import { FooterComponent } from './components/elements/footer/footer.component';
 import { ReviewsComponent } from './components/event/reviews/reviews.component';
 import { TicketsComponent } from './components/event/tickets/tickets.component';
 import { EventMapComponent } from './components/event/event-map/event-map.component';
-import { GoogleMapsDirectionsDirective } from './directives/google-maps-directions.directive';
 import { CalendarComponent } from './components/calendar/calendar.component';
-//import { MapDirectionsComponent } from './components/map-directions/map-directions.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +36,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     ReviewsComponent,
     TicketsComponent,
     EventMapComponent,
-    GoogleMapsDirectionsDirective,
     CalendarComponent,
-    //MapDirectionsComponent
   ],
   imports: [
     BrowserModule,
