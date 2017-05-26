@@ -2,6 +2,7 @@
   <div class="btn-group" style="margin-left:auto;margin-right:auto;">
     <div
       class="btn btn-primary"
+      style="cursor: pointer;"
       mwlCalendarPreviousView
       [view]="'month'"
       [(viewDate)]="viewDate">
@@ -9,6 +10,7 @@
     </div>
     <div
       class="btn btn-secondary"
+      style="cursor: pointer;"
       (click)="monthSelectorActivated=!monthSelectorActivated">
       <div *ngIf="monthSelectorActivated; else currentDate">
         {{currentYear}}
@@ -19,6 +21,7 @@
     </div>
     <div
       class="btn btn-primary"
+      style="cursor: pointer;"
       mwlCalendarNextView
       [view]="'month'"
       [(viewDate)]="viewDate">
@@ -37,7 +40,7 @@
 <ng-template #monthSelector>
   <div class="col-4">
     <div class="card card-faded text-center pt-2 mb-4" *ngFor="let month of months[this.currentYear]" (click)="monthSelectorActivated = false; viewDate = month.date">
-      <div class="card-block card-title">
+      <div class="card-block card-title" style="cursor: pointer;">
         <h5 class="text-light lead">{{ month.name }}</h5>
         <br>
         <div class="circle" [ngClass]="{blue: month.numberOfEvents != 0, grey: month.numberOfEvents == 0}">{{ month.numberOfEvents }}</div>
