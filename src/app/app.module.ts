@@ -23,7 +23,6 @@ import { FooterComponent } from './components/elements/footer/footer.component';
 import { ReviewsComponent } from './components/event/reviews/reviews.component';
 import { TicketsComponent } from './components/event/tickets/tickets.component';
 import { EventMapComponent } from './components/event/event-map/event-map.component';
-import { GoogleMapsDirectionsDirective } from './directives/google-maps-directions.directive';
 import { DatesComponent } from './components/event/dates/dates.component';
 import { LowestPricePipe } from './pipes/lowest-price.pipe';
 //import { MapDirectionsComponent } from './components/map-directions/map-directions.component';
@@ -39,7 +38,6 @@ import { LowestPricePipe } from './pipes/lowest-price.pipe';
     ReviewsComponent,
     TicketsComponent,
     EventMapComponent,
-    GoogleMapsDirectionsDirective,
     DatesComponent,
     LowestPricePipe,
     //MapDirectionsComponent
