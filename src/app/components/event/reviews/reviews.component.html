@@ -1,20 +1,22 @@
-<div class="row mt-4">
+<div class="row text-center mt-5 mb-5">
   <div class="col-12">
-    <h2>Reviews</h2>
+    <h2 class="display-4">Reviews</h2>
     <div *ngIf="reviews[0]; else elseBlock">
 
       <div class="card card-default" *ngFor="let review of reviews">
         <div class="container">
           <div class="row">
-            <div class="col-md-3 d-flex bg-success p-5">
+            <div class="col-md-2 d-flex bg-faded p-3">
               <h1 class="mx-auto align-self-center">{{ review.rating }}/10</h1>
             </div>
-            <div class="col-md-9 py-3">
-              <h3 class="card-title">{{ review.title }}</h3>
-              <p class="card-text">{{ review.content}}</p>
-              <p class="text-muted">
-                {{ review.user.username }} at {{ review.date | date:short }}
-              </p>
+            <div class="col-md-10 py-3">
+              <h3 class="card-title text-left">
+                {{ review.title }}
+                <small class="text-muted">
+                  {{ review.user.username ? review.user.username : 'anonymous' }} at {{ review.date | date }}
+                </small>
+              </h3>
+              <p class="card-text text-left">{{ review.content}}</p>
               <!-- <a href="#" class="btn btn-outline-success btn-block">Outline</a> -->
             </div>
           </div>
@@ -24,7 +26,7 @@
 
     </div>
     <ng-template #elseBlock>
-      <h4>There are no reviews! Create one:</h4>
+      <h6 class="lead">There are no reviews!</h6>
     </ng-template>
   </div>
 </div>

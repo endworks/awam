@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron-fluid bg-primary">
+<div class="jumbotron jumbotron-fluid bg-inverse">
   <div class="container">
     <h1 class="display-3 text-white">It's nothing but trash</h1>
     <p class="lead text-white">Those who indentify as 'otaku', they sicken me deeply</p>
@@ -25,12 +25,12 @@ Like, really hard.
                 <div class="col-md-9 py-3">
                   <h3 class="card-title pointer" role="button" [routerLink]="['/events', i, 'overview']">
                     {{ event.name }}
-                    <span class="badge badge-success">
+                    <span class="badge badge-info">
                       {{ event.lowestPrice.value != 0 ? ( 'From ' + (event.lowestPrice.value | currency:event.lowestPrice.currency:true )) : ( 'free' | uppercase ) }}
                     </span>
                   </h3>
-                  <p class="lead pointer" role="button" [routerLink]="['/events', i, 'location']">{{ event.location.venue }}, {{ event.location.locality }}</p>
-                  <p class="card-text">{{ event.description }}</p>
+                  <p class="lead pointer" role="button" [routerLink]="['/events', i, 'location']">{{ event?.location.venue }}, {{ event?.location.locality }}, {{ event?.location.country }} <small>{{ event.schedule[0].start | date }}</small></p>
+                  <p class="card-text text-muted">{{ event.description }}</p>
                   <!-- <div id="tags">
                     <span class="badge badge-info" *ngFor="let tag of event.tags">{{ tag }}</span>
                   </div> -->

@@ -11,6 +11,7 @@ import { EventComponent } from './components/event/event.component';
 import { DatabaseService } from './services/database.service';
 
 import { app_routing } from './app.routes';
+import { LOCALE_ID } from '@angular/core';
 import { environment } from './environments/environment';
 
 import { AgmCoreModule } from 'angular2-google-maps/core'
@@ -48,7 +49,7 @@ import { DatesComponent } from './components/event/dates/dates.component';
     AngularFireModule.initializeApp(environment.firebase),
     AgmCoreModule.forRoot(environment.gmaps)
   ],
-  providers: [DatabaseService, AngularFireDatabase],
+  providers: [DatabaseService, AngularFireDatabase, { provide: LOCALE_ID, useValue: "en-GB" }],
   bootstrap: [AppComponent]
 })
 

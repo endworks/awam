@@ -119,7 +119,7 @@ exports = module.exports = __webpack_require__(26)();
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\r\n.card-img-top, .carousel-item img, .cover{\r\n  max-height: 300px;\r\n  width: 100%;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n}\r\n\r\n.card .cover {\r\n  border-top-left-radius: .25rem;\r\n  border-bottom-left-radius: .25rem;\r\n  padding: 0px !important;\r\n  height: 100%;\r\n  min-height: 13em;\r\n  margin: -1px;\r\n}\r\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\r\n.card-img-top, .carousel-item img, .cover{\r\n  max-height: 300px;\r\n  width: 100%;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n}\r\n\r\n.card .cover {\r\n  border-top-left-radius: .25rem;\r\n  border-bottom-left-radius: .25rem;\r\n  padding: 0px !important;\r\n  height: 100%;\r\n  min-height: 16em;\r\n  margin: -1px;\r\n}\r\n", ""]);
 
 // exports
 
