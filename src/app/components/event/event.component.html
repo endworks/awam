@@ -33,15 +33,15 @@
 <div class="container pt-4">
 
   <div class="row">
-    <section class="text-center">
+    <section class="jumbotron bg-faded text-center">
       <div class="container">
-        <h1 class="display-4">About this event</h1>
+        <h1 class="display-4">About this</h1>
         <p class="lead text-muted">{{ event?.description }}</p>
         <div class="row text-center">
           <div class="col py-3">
             <h1 class="m-b-2"><i class="fa fa-calendar-o display-2 text-primary"></i></h1>
             <h5 class="text-light">{{ event?.schedule.length }} Days</h5>
-            <h6 class="text-muted">Starts at {{ event?.schedule[0].start | date:'shortDate' }}</h6>
+            <h6 class="text-muted">Starts at {{ event?.schedule[0].start | date }}</h6>
           </div>
           <div class="col py-3">
             <h1 class="m-b-2"><i class="fa fa-check-square-o display-2 text-success"></i></h1>
