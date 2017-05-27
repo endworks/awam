@@ -63,8 +63,13 @@
   </div>
   <ng-template #monthSelector>
     <!-- 4x3 -->
-    <div class="col-4">
-      <div class="card card-faded text-center pt-2 mb-4" *ngFor="let month of yearsAndMonths[currentYear].months" (click)="monthSelectorActivated = false; viewDate = month.date">
+    <div class="row">
+      <div
+        class="card card-faded text-center"
+        *ngFor="let month of yearsAndMonths[currentYear].months"
+        (click)="monthSelectorActivated = false; viewDate = month.date"
+        style="width: 33%"
+        >
         <div class="card-block card-title" style="cursor: pointer;">
           <h5 class="text-light lead">{{ month.name }}</h5>
           <br>
@@ -76,8 +81,12 @@
 </div>
 <ng-template #yearSelector>
 <!-- 3x3 -->
-  <div class="col-3">
-    <div class="card card-faded text-center pt-2 mb-4" *ngFor="let year of yearRange(currentYear)" (click)="yearSelectorActivated = false; currentYear = year.year">
+  <div class="row">
+    <div
+      class="card card-faded text-center"
+      *ngFor="let year of yearRange(currentYear)"
+      (click)="yearSelectorActivated = false; currentYear = year.year"
+      style="width: 33%">
       <div class="card-block card-title" style="cursor: pointer;">
         <h5 class="text-light lead">{{ year.year }}</h5>
         <br>
