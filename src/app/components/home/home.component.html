@@ -17,8 +17,8 @@ Like, really hard.
     <div class="col-12 mx-auto">
       <div class="row">
         <div class="col-lg-12">
-
-          <div class="card card-default mt-4" *ngFor="let event of events; let i = index">
+          <h2>Upcoming events:</h2>
+          <div class="card card-default mt-4" *ngFor="let event of (events | upcomingEvents); let i = index">
             <div class="container-fluid">
               <div class="row">
                 <img class="col-md-3 d-flex cover" [src]="event.cover | safe" alt="Card image cap">
