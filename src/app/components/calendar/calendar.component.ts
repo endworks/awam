@@ -52,9 +52,11 @@ export class CalendarComponent implements AfterViewChecked  {
   yearSelectorActivated = false;
   yearsAndMonths: Array<Year> = [];
   currentYear: string;
+  resetYear: string;
 
   constructor() {
     this.currentYear = new Date().getFullYear().toString();
+    this.resetYear = this.currentYear;
     this.initializeYear(this.currentYear);
   }
 
