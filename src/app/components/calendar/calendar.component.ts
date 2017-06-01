@@ -2,9 +2,11 @@
 //make events clickable
 //optimize
 import { Component, AfterViewChecked , Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Event } from '../../models/event.model'
 import { Subject } from 'rxjs/Subject';
 import { EventColor, CalendarEvent, WeekDay, MonthView, MonthViewDay } from 'calendar-utils';
+import { isSameDay } from 'date-fns';
 
 const colors: any = {
   red: {
@@ -48,13 +50,17 @@ export class CalendarComponent implements AfterViewChecked  {
   viewDate: Date = new Date();
   resetDate: Date = new Date();
   refresh: Subject<any> = new Subject();
+  activeDayIsOpen: boolean = false;
   monthSelectorActivated = false;
   yearSelectorActivated = false;
   yearsAndMonths: Array<Year> = [];
   currentYear: string;
   resetYear: string;
+  eventIdDict: Array<string> = [];
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.currentYear = new Date().getFullYear().toString();
     this.resetYear = this.currentYear;
     this.initializeYear(this.currentYear);
@@ -78,14 +84,41 @@ export class CalendarComponent implements AfterViewChecked  {
           title: event.name,
           color: colors.red}
         this.calendarEvents.push(calendarEvent);
+        this.eventIdDict[event.name] = event.id;
       }
-      let day = event.schedule[0].start;
-      let year = day.getFullYear()
-      this.initializeYear(year);
-      this.yearsAndMonths[year].months[day.getMonth()].numberOfEvents += 1;
-      this.yearsAndMonths[year].numberOfEvents += 1
+      let alreadyAdded: Array<boolean> = [];
+      for(let scheduleDay of event.schedule){
+        let day = scheduleDay.start;
+        let month = day.getMonth()
+        let year = day.getFullYear()
+        if(!(month in alreadyAdded)){
+          this.initializeYear(year);
+          this.yearsAndMonths[year].months[month].numberOfEvents += 1;
+          alreadyAdded[month] = true;
+        }
+        if(!(year in alreadyAdded)){
+          this.initializeYear(year);
+          this.yearsAndMonths[year].numberOfEvents += 1;
+          alreadyAdded[year] = true;
+        }
+      }
     }
 
+  }
+
+  dayClicked({date, events}: {date: Date, events: Array<CalendarEvent>}): void{
+    if((isSameDay(date, this.viewDate) && this.activeDayIsOpen == true)
+      || events.length == 0){
+      this.activeDayIsOpen = false;
+    } else {
+      this.activeDayIsOpen = true;
+      this.viewDate = date;
+    }
+  }
+
+  handleEvent(event: CalendarEvent){
+    let id = this.eventIdDict[event.title];
+    this.router.navigate(['/events', id, 'overview'])
   }
 
   initializeYear(year: number|string){

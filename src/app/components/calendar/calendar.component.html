@@ -61,7 +61,11 @@
     <mwl-calendar-month-view
       [events]="calendarEvents"
       [viewDate]="viewDate"
-      [weekStartsOn]=1>
+      [weekStartsOn]=1
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day)"
+      (eventClicked)="handleEvent($event.event)"
+      >
     </mwl-calendar-month-view>
   </div>
   <ng-template #monthSelector>
@@ -71,7 +75,7 @@
         class="card card-faded text-center"
         *ngFor="let month of yearsAndMonths[currentYear].months"
         (click)="monthSelectorActivated = false; viewDate = month.date"
-        style="width: 33%"
+        style="width: 33.333%"
         >
         <div class="card-block card-title" style="cursor: pointer;">
           <h5 class="text-light lead">{{ month.name }}</h5>
@@ -89,7 +93,7 @@
       class="card card-faded text-center"
       *ngFor="let year of yearRange(currentYear)"
       (click)="yearSelectorActivated = false; currentYear = year.year"
-      style="width: 33%">
+      style="width: 33.333%">
       <div class="card-block card-title" style="cursor: pointer;">
         <h5 class="text-light lead">{{ year.year }}</h5>
         <br>
