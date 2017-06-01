@@ -25,7 +25,6 @@ import { TicketsComponent } from './components/event/tickets/tickets.component';
 import { EventMapComponent } from './components/event/event-map/event-map.component';
 import { DatesComponent } from './components/event/dates/dates.component';
 import { LowestPricePipe } from './pipes/lowest-price.pipe';
-import { UpcomingEventsPipe } from './pipes/upcoming-events.pipe';
 //import { MapDirectionsComponent } from './components/map-directions/map-directions.component';
 
 @NgModule({
@@ -41,7 +40,6 @@ import { UpcomingEventsPipe } from './pipes/upcoming-events.pipe';
     EventMapComponent,
     DatesComponent,
     LowestPricePipe,
-    UpcomingEventsPipe,
     //MapDirectionsComponent
   ],
   imports: [
