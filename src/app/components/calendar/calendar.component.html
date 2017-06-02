@@ -6,13 +6,14 @@
         style="cursor: pointer;"
         mwlCalendarPreviousView
         [view]="'month'"
-        [(viewDate)]="viewDate">
+        [(viewDate)]="viewDate"
+        (click) = "activeDayIsOpen=false">
         Previous
       </div>
       <div
         class="btn btn-secondary"
         style="cursor: pointer;"
-        (click)="monthSelectorActivated=true">
+        (click)="monthSelectorActivated=true;activeDayIsOpen=false">
           {{ viewDate | date:"MMMM y" }}
       </div>
       <div
@@ -20,7 +21,8 @@
         style="cursor: pointer;"
         mwlCalendarNextView
         [view]="'month'"
-        [(viewDate)]="viewDate">
+        [(viewDate)]="viewDate"
+        (click) = "activeDayIsOpen=false">
         Next
       </div>
     </div>
