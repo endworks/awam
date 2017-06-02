@@ -60,7 +60,13 @@ export class EventCalendarComponent implements AfterViewChecked  {
     header: false,
     firstDay: 1,
     eventLimit: true, // allow "more" link when too many events
-    events: []
+    eventLimitClick: "popover",
+    events: [],
+    eventClick: function(event){
+      if (event.id) {
+        this.router.navigate(['/events', event.id, 'overview']);
+      }
+    }
   }
 
   @ViewChild(CalendarComponent) myCalendar: CalendarComponent;
@@ -86,15 +92,18 @@ export class EventCalendarComponent implements AfterViewChecked  {
     }
     this.calendarOptions['events'] = [];
     for(let event of this.events){
-      for(let day of event.schedule){
+      console.log(event.consecutiveDays())
+      for(let interval of event.consecutiveDays()){
         let calendarEvent = {
-          start: day.start,
-          end: day.end,
+          start: interval.start,
+          end: interval.end,
           title: event.name,
           id: Number(event.id)}
         this.calendarOptions['events'].push(calendarEvent);
       }
-      //this.myCalendar.fullCalendar( 'addEventSource', this.calendarOptions['events']);
+      this.myCalendar.fullCalendar('removeEventSources');
+      this.myCalendar.fullCalendar('addEventSource', this.calendarOptions['events']);
+
       //this makes it possible to have a number-of-events-in-month property:
       let alreadyAdded: Array<boolean> = [];
       for(let scheduleDay of event.schedule){
@@ -116,20 +125,6 @@ export class EventCalendarComponent implements AfterViewChecked  {
 
   }
 
-  // dayClicked({date, events}: {date: Date, events: Array<CalendarEvent>}): void{
-  //   if((isSameDay(date, this.viewDate) && this.activeDayIsOpen == true)
-  //     || events.length == 0){
-  //     this.activeDayIsOpen = false;
-  //   } else {
-  //     this.activeDayIsOpen = true;
-  //     this.viewDate = date;
-  //   }
-  // }
-  //
-  // handleEvent(event: Object){
-  //   let id = '0';
-  //   this.router.navigate(['/events', id, 'overview'])
-  // }
 
   initializeYear(year: number|string){
     if(year in this.yearsAndMonths){

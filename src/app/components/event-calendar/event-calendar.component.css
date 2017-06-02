@@ -15,3 +15,6 @@
 .circle.grey {
   background: #cbcdee;
 }
+.hidden {
+  display: none;
+}

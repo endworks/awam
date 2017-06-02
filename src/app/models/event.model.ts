@@ -5,6 +5,7 @@ import { Activity } from './activity.model';
 import { DatabaseService } from '../services/database.service';
 import { ScheduleDay } from './schedule.model';
 import { Price } from './price.model'
+import { differenceInDays } from 'date-fns'
 
 export class Event{
   id: number;
@@ -67,5 +68,31 @@ export class Event{
         this.schedule.push(schedule_day);
       }
     }
+  }
+
+  consecutiveDays(){
+    let time_intervals = [];
+    let current_index = '0';
+    for(let i in this.schedule){
+      if(i==current_index){
+        for(let j in this.schedule.slice(Number(i))){
+          let difference = Math.abs(differenceInDays(this.schedule[i].start,
+                           this.schedule[j].start))
+          console.log(i, j, this.schedule[j].start.getDay(), this.schedule[i].start.getDay(),  difference, this.schedule)
+          if(difference > 1){
+              let end_index = j
+              break
+            }
+        }
+        if(!end_index){
+          var end_index = (this.schedule.length).toString()
+        }
+        time_intervals.push({
+          start:this.schedule[i].start,
+          end:this.schedule[(Number(end_index)-1).toString()].start})
+        current_index = (Number(end_index)+1).toString()
+      }
+    }
+    return time_intervals
   }
 }
