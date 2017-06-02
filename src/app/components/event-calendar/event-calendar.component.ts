@@ -1,12 +1,11 @@
 //TODO:
-//make events clickable
+//make the calendar load better (create empty space while it loads?)
 //optimize
-import { Component, AfterViewChecked , Input } from '@angular/core';
+import { Component, AfterViewChecked, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { CalendarComponent } from 'angular2-fullcalendar/src/calendar/calendar'
 import { Event } from '../../models/event.model'
-import { Subject } from 'rxjs/Subject';
-import { EventColor, CalendarEvent, WeekDay, MonthView, MonthViewDay } from 'calendar-utils';
-import { isSameDay } from 'date-fns';
+import { subMonths, addMonths } from 'date-fns'
 
 const colors: any = {
   red: {
@@ -39,32 +38,42 @@ interface Year {
 }
 
 @Component({
-  selector: 'app-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+  selector: 'app-event-calendar',
+  templateUrl: './event-calendar.component.html',
+  styleUrls: ['./event-calendar.component.css']
 })
-export class CalendarComponent implements AfterViewChecked  {
+export class EventCalendarComponent implements AfterViewChecked  {
 
   @Input() events: Array<Event>;
-  calendarEvents: CalendarEvent[] = [];
   viewDate: Date = new Date();
   resetDate: Date = new Date();
-  refresh: Subject<any> = new Subject();
   activeDayIsOpen: boolean = false;
   monthSelectorActivated = false;
   yearSelectorActivated = false;
   yearsAndMonths: Array<Year> = [];
   currentYear: string;
   resetYear: string;
-  eventIdDict: Array<string> = [];
+  currentMonth: number;
+  calendarOptions: Object = {
+    height: '600px',
+    fixedWeekCount : true,
+    header: false,
+    firstDay: 1,
+    eventLimit: true, // allow "more" link when too many events
+    events: []
+  }
+
+  @ViewChild(CalendarComponent) myCalendar: CalendarComponent;
 
   constructor(
     private router: Router
   ) {
-    this.currentYear = new Date().getFullYear().toString();
+    this.currentMonth = this.viewDate.getMonth()
+    this.currentYear = this.viewDate.getFullYear().toString();
     this.resetYear = this.currentYear;
     this.initializeYear(this.currentYear);
-  }
+    }
+
 
   ngAfterViewChecked() {
     for(let year of this.yearsAndMonths){
@@ -75,17 +84,18 @@ export class CalendarComponent implements AfterViewChecked  {
       year.numberOfEvents = 0;
       }
     }
-    this.calendarEvents = [];
+    this.calendarOptions['events'] = [];
     for(let event of this.events){
       for(let day of event.schedule){
-        let calendarEvent: CalendarEvent = {
+        let calendarEvent = {
           start: day.start,
           end: day.end,
           title: event.name,
-          color: colors.red}
-        this.calendarEvents.push(calendarEvent);
-        this.eventIdDict[event.name] = event.id;
+          id: Number(event.id)}
+        this.calendarOptions['events'].push(calendarEvent);
       }
+      //this.myCalendar.fullCalendar( 'addEventSource', this.calendarOptions['events']);
+      //this makes it possible to have a number-of-events-in-month property:
       let alreadyAdded: Array<boolean> = [];
       for(let scheduleDay of event.schedule){
         let day = scheduleDay.start;
@@ -106,20 +116,20 @@ export class CalendarComponent implements AfterViewChecked  {
 
   }
 
-  dayClicked({date, events}: {date: Date, events: Array<CalendarEvent>}): void{
-    if((isSameDay(date, this.viewDate) && this.activeDayIsOpen == true)
-      || events.length == 0){
-      this.activeDayIsOpen = false;
-    } else {
-      this.activeDayIsOpen = true;
-      this.viewDate = date;
-    }
-  }
-
-  handleEvent(event: CalendarEvent){
-    let id = this.eventIdDict[event.title];
-    this.router.navigate(['/events', id, 'overview'])
-  }
+  // dayClicked({date, events}: {date: Date, events: Array<CalendarEvent>}): void{
+  //   if((isSameDay(date, this.viewDate) && this.activeDayIsOpen == true)
+  //     || events.length == 0){
+  //     this.activeDayIsOpen = false;
+  //   } else {
+  //     this.activeDayIsOpen = true;
+  //     this.viewDate = date;
+  //   }
+  // }
+  //
+  // handleEvent(event: Object){
+  //   let id = '0';
+  //   this.router.navigate(['/events', id, 'overview'])
+  // }
 
   initializeYear(year: number|string){
     if(year in this.yearsAndMonths){
@@ -160,5 +170,17 @@ export class CalendarComponent implements AfterViewChecked  {
   nextYear(){
     this.currentYear = (Number(this.currentYear)+1).toString();
     this.initializeYear(this.currentYear);
+  }
+  previousMonth(){
+    this.myCalendar.fullCalendar('prev');
+    this.viewDate = subMonths(this.viewDate, 1);
+  }
+  nextMonth(){
+    this.myCalendar.fullCalendar('next');
+    this.viewDate = addMonths(this.viewDate, 1);
+  }
+  gotoDate(date: Date){
+    this.myCalendar.fullCalendar('gotoDate', date);
+    this.viewDate = date;
   }
 }

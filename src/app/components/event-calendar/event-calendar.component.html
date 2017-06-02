@@ -4,10 +4,7 @@
       <div
         class="btn btn-primary"
         style="cursor: pointer;"
-        mwlCalendarPreviousView
-        [view]="'month'"
-        [(viewDate)]="viewDate"
-        (click) = "activeDayIsOpen=false">
+        (click)="previousMonth()">
         Previous
       </div>
       <div
@@ -19,10 +16,7 @@
       <div
         class="btn btn-primary"
         style="cursor: pointer;"
-        mwlCalendarNextView
-        [view]="'month'"
-        [(viewDate)]="viewDate"
-        (click) = "activeDayIsOpen=false">
+        (click)="nextMonth()">
         Next
       </div>
     </div>
@@ -53,22 +47,16 @@
   style="cursor: pointer;"
   (click)="monthSelectorActivated=false;
   yearSelectorActivated=false;
-  viewDate=resetDate;
-  currentYear=resetYear;">
+  viewDate = resetDate;
+  currentYear=resetYear;
+  gotoDate(resetDate);">
   Reset
 </div>
 <br>
 <div *ngIf="yearSelectorActivated==false; else yearSelector">
   <div *ngIf="monthSelectorActivated==false; else monthSelector">
-    <mwl-calendar-month-view
-      [events]="calendarEvents"
-      [viewDate]="viewDate"
-      [weekStartsOn]=1
-      [activeDayIsOpen]="activeDayIsOpen"
-      (dayClicked)="dayClicked($event.day)"
-      (eventClicked)="handleEvent($event.event)"
-      >
-    </mwl-calendar-month-view>
+    <angular2-fullcalendar [options]="calendarOptions">
+    </angular2-fullcalendar>
   </div>
   <ng-template #monthSelector>
     <!-- 4x3 -->
@@ -76,7 +64,7 @@
       <div
         class="card card-faded text-center"
         *ngFor="let month of yearsAndMonths[currentYear].months"
-        (click)="monthSelectorActivated = false; viewDate = month.date"
+        (click)="monthSelectorActivated = false; gotoDate(month.date)"
         style="width: 33.333%"
         >
         <div class="card-block card-title" style="cursor: pointer;">

@@ -22,7 +22,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "angular-calendar": "^0.15.4",
+    "angular2-fullcalendar": "^1.0.19",
     "angular2-google-maps": "^0.17.0",
     "angularfire2": "^4.0.0-rc.0",
     "bootstrap": "^4.0.0-alpha.6",

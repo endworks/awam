@@ -16,7 +16,7 @@ import { app_routing } from './app.routes';
 import { LOCALE_ID } from '@angular/core';
 import { environment } from './environments/environment';
 
-import { CalendarModule } from 'angular-calendar';
+import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
 import { AgmCoreModule } from 'angular2-google-maps/core'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
@@ -25,7 +25,7 @@ import { FooterComponent } from './components/elements/footer/footer.component';
 import { ReviewsComponent } from './components/event/reviews/reviews.component';
 import { TicketsComponent } from './components/event/tickets/tickets.component';
 import { EventMapComponent } from './components/event/event-map/event-map.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { EventCalendarComponent } from './components/event-calendar/event-calendar.component';
 import { DatesComponent } from './components/event/dates/dates.component';
 import { LowestPricePipe } from './pipes/lowest-price.pipe';
 
@@ -40,9 +40,10 @@ import { LowestPricePipe } from './pipes/lowest-price.pipe';
     ReviewsComponent,
     TicketsComponent,
     EventMapComponent,
-    CalendarComponent,
+    EventCalendarComponent,
     DatesComponent,
     LowestPricePipe,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +53,6 @@ import { LowestPricePipe } from './pipes/lowest-price.pipe';
     AngularFireModule.initializeApp(environment.firebase),
     AgmCoreModule.forRoot(environment.gmaps),
     BrowserAnimationsModule,
-    CalendarModule.forRoot()
   ],
   providers: [
     DatabaseService,
