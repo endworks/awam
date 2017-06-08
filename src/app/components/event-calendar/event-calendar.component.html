@@ -51,42 +51,44 @@
   currentYear=resetYear;">
   Reset
 </div>
-<br>
-<div *ngIf="yearSelectorActivated==false; else yearSelector">
-  <div *ngIf="monthSelectorActivated">
-    <!-- 4x3 -->
-    <div class="row">
-      <div
-        class="card card-faded text-center"
-        *ngFor="let month of yearsAndMonths[currentYear].months"
-        (click)="monthSelectorActivated = false; gotoDate(month.date)"
-        style="width: 33.333%"
-        >
-        <div class="card-block card-title" style="cursor: pointer;">
-          <h5 class="text-light lead">{{ month.name }}</h5>
-          <br>
-          <div class="circle" [ngClass]="{blue: month.numberOfEvents != 0, grey: month.numberOfEvents == 0}">{{ month.numberOfEvents }}</div>
+<br /><br />
+<div style="z-index:2;position: absolute;">
+  <div *ngIf="yearSelectorActivated==false; else yearSelector">
+    <div *ngIf="monthSelectorActivated">
+      <!-- 4x3 -->
+      <div class="row">
+        <div
+          class="card card-faded text-center"
+          *ngFor="let month of yearsAndMonths[currentYear].months"
+          (click)="monthSelectorActivated = false; gotoDate(month.date)"
+          style="width: 33.333%;"
+          >
+          <div class="card-block card-title" style="cursor: pointer;">
+            <h5 class="text-light lead">{{ month.name }}</h5>
+            <br>
+            <div class="circle" [ngClass]="{blue: month.numberOfEvents != 0, grey: month.numberOfEvents == 0}">{{ month.numberOfEvents }}</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<ng-template #yearSelector>
-<!-- 3x3 -->
-  <div class="row">
-    <div
-      class="card card-faded text-center"
-      *ngFor="let year of yearRange(currentYear)"
-      (click)="yearSelectorActivated = false; currentYear = year.year"
-      style="width: 33.333%">
-      <div class="card-block card-title" style="cursor: pointer;">
-        <h5 class="text-light lead">{{ year.year }}</h5>
-        <br>
-        <div class="circle" [ngClass]="{blue: year.numberOfEvents != 0, grey: year.numberOfEvents == 0}">{{ year.numberOfEvents }}</div>
+  <ng-template #yearSelector>
+  <!-- 3x3 -->
+    <div class="row">
+      <div
+        class="card card-faded text-center"
+        *ngFor="let year of yearRange(currentYear)"
+        (click)="yearSelectorActivated = false; currentYear = year.year"
+        style="width: 33.333%;">
+        <div class="card-block card-title" style="cursor: pointer;">
+          <h5 class="text-light lead">{{ year.year }}</h5>
+          <br>
+          <div class="circle" [ngClass]="{blue: year.numberOfEvents != 0, grey: year.numberOfEvents == 0}">{{ year.numberOfEvents }}</div>
+        </div>
       </div>
     </div>
-  </div>
-</ng-template>
+  </ng-template>
+</div>
 <angular2-fullcalendar
   [options]="calendarOptions"
   >

@@ -92,7 +92,6 @@ export class EventCalendarComponent implements AfterViewChecked  {
     }
     this.calendarOptions['events'] = [];
     for(let event of this.events){
-      console.log(event.consecutiveDays())
       for(let interval of event.consecutiveDays()){
         let calendarEvent = {
           start: interval.start,

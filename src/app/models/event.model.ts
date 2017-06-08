@@ -78,7 +78,6 @@ export class Event{
         for(let j in this.schedule.slice(Number(i))){
           let difference = Math.abs(differenceInDays(this.schedule[i].start,
                            this.schedule[j].start))
-          console.log(i, j, this.schedule[j].start.getDay(), this.schedule[i].start.getDay(),  difference, this.schedule)
           if(difference > 1){
               let end_index = j
               break
