@@ -8,6 +8,7 @@ import { Event } from '../../models/event.model'
 })
 export class HomeComponent implements OnInit {
   events: Array<Event>;
+  upcomingEvents: Array<Event>;
 
   constructor(public db: DatabaseService) { }
 
@@ -22,6 +23,21 @@ export class HomeComponent implements OnInit {
           this.events.push(event);
         }
         console.log(this.events);
+
+        let date = new Date();
+        this.upcomingEvents = this.events.sort((event1, event2) => {
+                            var a = event1.schedule[0].start.getTime();
+                            var b = event2.schedule[0].start.getTime();
+                            if (a < b) {
+                              return -1;
+                            } else if (a > b) {
+                              return 1;
+                            } else {
+                              return 0;
+                            }
+                          }).filter(event => {
+                            return (event.schedule[0].start > date)
+                          });
       }
     );
   }
