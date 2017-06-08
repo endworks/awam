@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { EventComponent } from './components/event/event.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 const app_routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -10,7 +11,7 @@ const app_routes: Routes = [
   { path: 'events/:id/location', component: EventComponent },
   { path: 'events/:id/reviews', component: EventComponent },
   { path: 'events/:id/gallery', component: EventComponent },
-  { path: 'admin', component: HomeComponent },
+  { path: 'admin-panel', component: AdminPanelComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
