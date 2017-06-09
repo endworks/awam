@@ -16,7 +16,7 @@ import { app_routing } from './app.routes';
 import { LOCALE_ID } from '@angular/core';
 import { environment } from './environments/environment';
 
-import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
+import {CalendarModule} from "ap-angular2-fullcalendar";
 import { AgmCoreModule } from 'angular2-google-maps/core'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
@@ -43,7 +43,6 @@ import { LowestPricePipe } from './pipes/lowest-price.pipe';
     EventCalendarComponent,
     DatesComponent,
     LowestPricePipe,
-    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +52,7 @@ import { LowestPricePipe } from './pipes/lowest-price.pipe';
     AngularFireModule.initializeApp(environment.firebase),
     AgmCoreModule.forRoot(environment.gmaps),
     BrowserAnimationsModule,
+    CalendarModule.forRoot(),
   ],
   providers: [
     DatabaseService,

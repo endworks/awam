@@ -3,7 +3,7 @@
 //optimize
 import { Component, AfterViewChecked, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { CalendarComponent } from 'angular2-fullcalendar/src/calendar/calendar'
+import { CalendarComponent } from 'ap-angular2-fullcalendar'
 import { Event } from '../../models/event.model'
 import { subMonths, addMonths } from 'date-fns'
 
