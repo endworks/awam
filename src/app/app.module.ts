@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from '@angular/http';
 import { CurrencyPipe } from '@angular/common'
 
@@ -47,6 +47,7 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     app_routing,
     AngularFireModule.initializeApp(environment.firebase),

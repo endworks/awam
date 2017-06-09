@@ -14,6 +14,7 @@ export class PhysicalLocation{
   route: string;
   street_number: number;
   venue: string;
+
   loadFromDatabase(db: Object){
     this.administrative_area_level_1 = db['administrative_area_level_1']
     this.administrative_area_level_2 = db['administrative_area_level_2']
@@ -25,5 +26,9 @@ export class PhysicalLocation{
     this.venue = db['venue']
     this.coordinates =  new Coordinates(db['coordinates']['lat'],
                                         db['coordinates']['lon'])
+  }
+
+  supplyCoordinates(lat:number, lon:number){
+    this.coordinates = new Coordinates(lat, lon)
   }
 }

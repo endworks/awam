@@ -9,6 +9,7 @@ export const environment = {
     messagingSenderId: "718852410241"
   },
   gmaps: {
-    apiKey: 'AIzaSyAjn1V0yI1sYRZO5VMW7c4DqoBEzC3CSMI'
+    apiKey: 'AIzaSyBQOGuN-YUu_4gUXD_WrdrOkE7W43U_aHc',
+    libraries: ["places"]
   },
 };

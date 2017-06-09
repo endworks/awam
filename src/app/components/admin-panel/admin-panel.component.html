@@ -3,7 +3,17 @@
    <div class="col-lg-4" style="margin: auto">
      <div class="card">
       <div class="card-block">
-          <input [(ngModel)]="name" placeholder="kek" style="">
+          <input [(ngModel)]="inputEvent.name" placeholder="name">
+          <input [(ngModel)]="inputEvent.slug" placeholder="slug">
+          <input [(ngModel)]="inputEvent.cover" placeholder="cover">
+          <input [(ngModel)]="inputEvent.description" placeholder="description">
+          <input [(ngModel)]="inputEvent.website" placeholder="website">
+          <div class="form-group">
+          <input placeholder="location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupInput [formControl]="locationInput">
+          {{location|json}}
+          <br>
+          <input [(ngModel)]="location.venue" placeholder="venue">
+          </div>
       </div>
     </div>
   </div>
