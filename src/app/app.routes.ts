@@ -3,7 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { EventComponent } from './components/event/event.component';
 
 const app_routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'events', component: HomeComponent },
   { path: 'events/:id/overview', component: EventComponent },
   { path: 'events/:id/schedule', component: EventComponent },
@@ -11,7 +11,7 @@ const app_routes: Routes = [
   { path: 'events/:id/reviews', component: EventComponent },
   { path: 'events/:id/gallery', component: EventComponent },
   { path: 'admin', component: HomeComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'home' }
+  { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
 export const app_routing = RouterModule.forRoot(app_routes);
